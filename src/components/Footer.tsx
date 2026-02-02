@@ -26,7 +26,7 @@ export function Footer() {
           {/* Careers/About */}
           <div>
             <span className="inline-block px-3 py-1 rounded-full bg-background text-foreground text-xs font-medium mb-4">
-              about us
+              Organised By
             </span>
             <h3 className="text-xl md:text-2xl font-bold font-heading mb-2">
               HR Interest Group
@@ -34,12 +34,7 @@ export function Footer() {
             <p className="text-background/70 text-sm mb-4">
               by µLearn Foundation
             </p>
-            <Link
-              href="/about"
-              className="text-sm text-background underline underline-offset-4 hover:text-background/80 transition-colors"
-            >
-              Learn More
-            </Link>
+
           </div>
 
           {/* Office/Location */}

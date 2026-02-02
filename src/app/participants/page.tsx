@@ -1,7 +1,8 @@
+"use client"
 import Link from "next/link";
-import { CheckCircle2, Users, GraduationCap, Briefcase, Rocket } from "lucide-react";
+import { CheckCircle2, Users, GraduationCap, Briefcase, Rocket, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Card, CardTitle, CardDescription } from "@/components/ui/card";
+import { motion } from "framer-motion";
 
 const targetAudience = [
     {
@@ -26,160 +27,188 @@ const targetAudience = [
     },
 ];
 
-const benefits = [
-    {
-        title: "Hands-On Real-World Exposure",
-        description: "Engage directly with authentic HR scenarios that mirror actual workplace challenges. From mock interviews to designing employee lifecycle strategies.",
-    },
-    {
-        title: "Direct Access to Industry Leaders",
-        description: "Interact face-to-face with seasoned HR professionals through speed mentoring sessions, power lunches, and domain specific discussions.",
-    },
-    {
-        title: "Founding Cohort Recognition",
-        description: "Join an exclusive network of founding participants who pioneered this experience. Receive special recognition and priority access to future events.",
-    },
+const gains = [
+    { label: "100%", sublabel: "Real-World Mastery", detail: "Direct exposure to authentic HR scenarios and workplace challenges." },
+    { label: "Elite", sublabel: "Industry Access", detail: "Face-to-face mentorship with seasoned global HR leaders." },
+    { label: "Founding", sublabel: "Cohort Status", detail: "Exclusive recognition as a pioneer in the Olympus ecosystem." },
+    { label: "Strategic", sublabel: "Career Growth", detail: "Accelerated pathway to leadership through authority and flow." }
 ];
 
 export default function ParticipantsPage() {
     return (
-        <div className="flex flex-col min-h-screen">
-            {/* Hero Header */}
-            <section className="py-20 bg-muted/30 border-b border-border">
-                <div className="container mx-auto px-4 text-center">
-                    <span className="inline-block px-4 py-1.5 rounded-full bg-foreground text-background text-sm font-medium mb-6">
-                        Audience
-                    </span>
-                    <h1 className="text-4xl md:text-5xl lg:text-7xl font-extrabold font-heading text-foreground mb-6">
-                        Who Should Attend & Why
-                    </h1>
-                    <p className="text-lg text-foreground/60 max-w-2xl mx-auto">
-                        Olympus is designed for ambitious individuals ready to bridge the gap
-                        between academic learning and professional excellence.
-                    </p>
+        <div className="flex flex-col min-h-screen bg-background text-[#1A1C1E]">
+            {/* High-Fidelity Hero Section */}
+            <section className="relative pt-32 pb-24 overflow-hidden">
+                <div className="container mx-auto px-6">
+                    {/* High-Fidelity Grid: Continuous Flow & Absolute Separation */}
+                    <div className="grid grid-cols-1 lg:grid-cols-12 gap-y-12 items-start relative max-w-6xl mx-auto">
+
+                        {/* 1. Header Column (Left) */}
+                        <div className="lg:col-span-12 xl:col-span-7">
+                            <motion.div
+                                initial={{ opacity: 0, y: 30 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                className="pr-4"
+                            >
+                                <h1 className="text-5xl md:text-7xl lg:text-[50px] font-black font-heading leading-[0.85] tracking-tighter uppercase text-[#1A1C1E]">
+                                    UPHOLDING THE <br />
+                                    FOUNDATIONS OF <br />
+                                    <span className="text-primary italic">AUTHORITY & FLOW</span>
+                                </h1>
+                            </motion.div>
+                        </div>
+
+                        {/* 2. Subtext Column (Right) */}
+                        <div className="lg:col-span-12 xl:col-span-5 lg:text-right flex flex-col justify-end xl:pb-6">
+                            <motion.div
+                                initial={{ opacity: 0, y: 30 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ delay: 0.1 }}
+                                className="max-w-md ml-auto"
+                            >
+                                <p className="text-base md:text-lg text-foreground/80 leading-relaxed font-semibold">
+                                    We merge immersive pedagogy with professional execution to create
+                                    impactful HR leaders. Olympus is a meticulously designed ecosystem
+                                    that redefines the boundaries of modern people management.
+                                </p>
+                            </motion.div>
+                        </div>
+
+                        {/* 3. The Visionary Liquid Track (Center-Right focused) */}
+                        <div className="lg:col-span-10 relative mt-8">
+                            <motion.div
+                                initial={{ opacity: 0, scale: 0.98 }}
+                                animate={{ opacity: 1, scale: 1 }}
+                                transition={{ delay: 0.2, duration: 1 }}
+                                className="relative w-full h-[350px] md:h-[500px] z-10"
+                            >
+                                <div className="absolute inset-0 overflow-hidden" style={{
+                                    clipPath: "url(#fluidSnakeMask)"
+                                }}>
+                                    <img
+                                        src="/participants-hero.png"
+                                        alt="Olympus Visionary Growth"
+                                        className="w-full h-full object-cover"
+                                    />
+                                    <div className="absolute inset-0 bg-linear-to-tr from-black/20 via-transparent to-black/10" />
+                                </div>
+                            </motion.div>
+                        </div>
+
+                        {/* 4. Strategic Context Stat (Right Pocket) */}
+                        <div className="lg:col-span-2 pt-20 flex justify-center lg:justify-end">
+                            <StatItem {...gains[3]} />
+                        </div>
+
+                        {/* 5. Core Value Statistics (Bottom Row - Absolute Separation) */}
+                        <div className="lg:col-span-12 mt-12">
+                            <div className="flex flex-wrap md:flex-nowrap justify-between items-start gap-12 lg:pr-[20%]">
+                                <StatItem {...gains[0]} />
+                                <StatItem {...gains[1]} />
+                                <StatItem {...gains[2]} />
+                            </div>
+                        </div>
+
+                        {/* Liquid Track SVG ClipPath Definition */}
+                        <svg width="0" height="0" className="absolute">
+                            <defs>
+                                <clipPath id="fluidSnakeMask" clipPathUnits="objectBoundingBox">
+                                    {/* A continuous organic meander path: 3 tiers with large smooth radii */}
+                                    <path d="
+                                        M 0,0.1 
+                                        H 0.82 
+                                        C 0.95,0.1 0.95,0.4 0.82,0.4 
+                                        H 0.18 
+                                        C 0.05,0.4 0.05,0.7 0.18,0.7 
+                                        H 1 
+                                        V 0.9 
+                                        H 0.18 
+                                        C 0,0.9 0,0.5 0.18,0.5 
+                                        H 0.82 
+                                        C 1,0.5 1,0.1 0.82,0.1 
+                                        L 0,0.1 
+                                        Z"
+                                    />
+                                </clipPath>
+                            </defs>
+                        </svg>
+                    </div>
                 </div>
             </section>
 
-            {/* Target Audience Scattered Layout */}
-            <section className="py-16 md:py-24 bg-background relative overflow-hidden">
-                <div className="container mx-auto px-4">
-                    <h2 className="text-3xl md:text-4xl font-bold font-heading text-center mb-16">
-                        Target Audience
-                    </h2>
+            {/* Target Audience Scattered Layout - Restored from original */}
+            <section className="py-24 bg-white relative overflow-hidden">
+                <div className="container mx-auto px-6">
+                    <div className="flex flex-col items-center mb-20">
+                        <span className="text-primary font-bold tracking-widest uppercase text-xs mb-4">The Cohort</span>
+                        <h2 className="text-4xl md:text-5xl font-black font-heading text-center">
+                            WHO IS THIS FOR?
+                        </h2>
+                    </div>
 
                     <div className="relative min-h-[600px] md:min-h-[700px] max-w-6xl mx-auto">
-                        {/* Engineering Students - Top Left */}
-                        <div className="absolute top-0 left-0 md:left-[5%] flex flex-col items-center md:items-start gap-4 w-[45%] md:w-auto">
-                            <div className="relative">
-                                <div className="absolute inset-0 bg-primary rounded-full scale-90 -z-10 translate-x-4 translate-y-4" />
-                                <img
-                                    src="/engineering-students.webp"
-                                    alt="Engineering Students"
-                                    className="w-40 h-40 md:w-56 md:h-56 object-contain relative z-10"
-                                />
+                        {/* Engineering Students */}
+                        <motion.div
+                            whileHover={{ y: -10 }}
+                            className="absolute top-0 left-0 md:left-[5%] flex flex-col items-center md:items-start gap-6 max-w-[300px]"
+                        >
+                            <div className="relative group">
+                                <div className="absolute inset-0 bg-primary/20 rounded-full scale-110 blur-xl opacity-0 group-hover:opacity-100 transition-opacity" />
+                                <img src="/engineering-students.webp" alt="Engineering" className="w-40 h-40 md:w-56 md:h-56 object-contain relative z-10" />
                             </div>
-                            <div className="text-center md:text-left">
-                                <p className="text-xs uppercase tracking-widest text-foreground/50 mb-1">Students</p>
-                                <h3 className="text-lg md:text-xl font-bold text-foreground">Engineering<br />Students</h3>
-                                <p className="text-xs text-foreground/40 max-w-[150px]">Exploring management pathways and human-side tech leadership.</p>
+                            <div className="text-center md:text-left bg-white/80 backdrop-blur-sm p-4 rounded-2xl relative z-10">
+                                <p className="text-[10px] uppercase tracking-widest text-[#1A1C1E]/50 mb-2">Technical Leadership</p>
+                                <h3 className="text-xl font-bold mb-2">Engineering Students</h3>
+                                <p className="text-sm text-[#1A1C1E]/60 leading-relaxed">Exploring management pathways and human-side tech leadership.</p>
                             </div>
-                        </div>
+                        </motion.div>
 
-                        {/* BBA/MBA Students - Center/Bottom */}
-                        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 flex flex-col items-center gap-4">
-                            <div className="relative">
-                                <div className="absolute inset-0 bg-primary rounded-full scale-90 -z-10 translate-x-2 translate-y-2" />
-                                <img
-                                    src="/mba-graduates.webp"
-                                    alt="BBA/MBA Students"
-                                    className="w-44 h-44 md:w-64 md:h-64 object-contain relative z-10"
-                                />
+                        {/* BBA/MBA Students */}
+                        <motion.div
+                            whileHover={{ y: -10 }}
+                            className="absolute bottom-0 left-1/2 -translate-x-1/2 flex flex-col items-center gap-6 max-w-[350px]"
+                        >
+                            <div className="relative group">
+                                <div className="absolute inset-0 bg-primary/20 rounded-full scale-110 blur-xl opacity-0 group-hover:opacity-100 transition-opacity" />
+                                <img src="/mba-graduates.webp" alt="MBA" className="w-44 h-44 md:w-64 md:h-64 object-contain relative z-10" />
                             </div>
-                            <div className="text-center">
-                                <p className="text-xs uppercase tracking-widest text-foreground/50 mb-1">Degrees</p>
-                                <h3 className="text-lg md:text-xl font-bold text-foreground">BBA / MBA / HR<br />Students</h3>
-                                <p className="text-xs text-foreground/40 max-w-[200px]">Seeking practical exposure to complement theoretical learning.</p>
+                            <div className="text-center bg-white/80 backdrop-blur-sm p-4 rounded-2xl relative z-10">
+                                <p className="text-[10px] uppercase tracking-widest text-[#1A1C1E]/50 mb-2">Business Excellence</p>
+                                <h3 className="text-xl font-bold mb-2">BBA / MBA / HR Students</h3>
+                                <p className="text-sm text-[#1A1C1E]/60 leading-relaxed">Seeking practical exposure to complement theoretical learning.</p>
                             </div>
-                        </div>
+                        </motion.div>
 
-                        {/* HR Enthusiasts - Top Right */}
-                        <div className="absolute top-8 right-0 md:right-[5%] flex flex-col items-center md:items-end gap-4 w-[45%] md:w-auto">
-                            <div className="relative">
-                                <div className="absolute inset-0 bg-primary rounded-full scale-90 -z-10 -translate-x-4 translate-y-4" />
-                                <img
-                                    src="/hr.webp"
-                                    alt="HR Aspirants"
-                                    className="w-40 h-40 md:w-56 md:h-56 object-contain relative z-10"
-                                />
+                        {/* HR Aspirants */}
+                        <motion.div
+                            whileHover={{ y: -10 }}
+                            className="absolute top-12 right-0 md:right-[5%] flex flex-col items-center md:items-end gap-6 max-w-[300px]"
+                        >
+                            <div className="relative group">
+                                <div className="absolute inset-0 bg-primary/20 rounded-full scale-110 blur-xl opacity-0 group-hover:opacity-100 transition-opacity" />
+                                <img src="/hr.webp" alt="HR Professionals" className="w-40 h-40 md:w-56 md:h-56 object-contain relative z-10" />
                             </div>
-                            <div className="text-center md:text-right">
-                                <p className="text-xs uppercase tracking-widest text-foreground/50 mb-1">Professionals</p>
-                                <h3 className="text-lg md:text-xl font-bold text-foreground">HR Aspirants &<br />Early-Career</h3>
-                                <p className="text-xs text-foreground/40 max-w-[150px]">Enter the HR profession or advance in early career stages.</p>
+                            <div className="text-center md:text-right bg-white/80 backdrop-blur-sm p-4 rounded-2xl relative z-10">
+                                <p className="text-[10px] uppercase tracking-widest text-[#1A1C1E]/50 mb-2">Strategic HR</p>
+                                <h3 className="text-xl font-bold mb-2">HR Aspirants & Professionals</h3>
+                                <p className="text-sm text-[#1A1C1E]/60 leading-relaxed">Entering the HR profession or advancing in early career stages.</p>
                             </div>
-                        </div>
+                        </motion.div>
                     </div>
                 </div>
             </section>
 
-            {/* Participant Benefits */}
-            <section className="py-16 md:py-24 bg-muted/30">
-                <div className="container mx-auto px-4 max-w-4xl">
-                    <h2 className="text-3xl md:text-4xl font-bold font-heading text-center mb-16">
-                        What Participants Gain
+            {/* Final CTA */}
+            <section className="py-24 bg-[#1A1C1E] text-white">
+                <div className="container mx-auto px-6 text-center">
+                    <h2 className="text-4xl md:text-6xl font-black font-heading mb-10 uppercase tracking-tighter">
+                        READY TO ACCELERATE <br />
+                        YOUR <span className="text-primary italic">HR CAREER?</span>
                     </h2>
-                    <div className="space-y-8">
-                        {benefits.map((benefit, idx) => (
-                            <div key={idx} className="flex gap-6 items-start bg-card p-8 rounded-2xl border border-border shadow-sm">
-                                <div className="mt-1">
-                                    <CheckCircle2 className="h-6 w-6 text-primary" />
-                                </div>
-                                <div>
-                                    <h3 className="text-xl font-bold text-foreground mb-2">
-                                        {benefit.title}
-                                    </h3>
-                                    <p className="text-card-foreground/70 leading-relaxed">
-                                        {benefit.description}
-                                    </p>
-                                </div>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-            </section>
-
-            {/* Difference Section */}
-            <section className="py-16 md:py-24">
-                <div className="container mx-auto px-4 text-center max-w-3xl">
-                    <h2 className="text-3xl md:text-4xl font-bold font-heading mb-8">
-                        What Makes This Different?
-                    </h2>
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                        <div className="p-4">
-                            <h4 className="font-bold text-primary mb-2">No passive listening</h4>
-                            <p className="text-sm text-foreground/60">Every session is designed for active participation and contribution.</p>
-                        </div>
-                        <div className="p-4">
-                            <h4 className="font-bold text-primary mb-2">High interaction</h4>
-                            <p className="text-sm text-foreground/60">Structured networking ensures every participant connects with peers and leaders.</p>
-                        </div>
-                        <div className="p-4">
-                            <h4 className="font-bold text-primary mb-2">Real conversations</h4>
-                            <p className="text-sm text-foreground/60">Forget generic talks. Get honest insights into mistakes, growth, and careers.</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            {/* Registration CTA */}
-            <section className="py-20 bg-primary text-primary-foreground">
-                <div className="container mx-auto px-4 text-center">
-                    <h2 className="text-3xl md:text-4xl font-bold font-heading mb-8">
-                        Ready to Accelerate Your HR Career?
-                    </h2>
-                    <Button asChild variant="white" size="xl" className="rounded-full px-10">
-                        <Link href="/contact">
+                    <Button asChild size="xl" className="rounded-full px-12 h-16 text-lg font-bold group">
+                        <Link href="/contact" className="flex items-center gap-3">
                             Register Now
+                            <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
                         </Link>
                     </Button>
                 </div>
@@ -187,3 +216,19 @@ export default function ParticipantsPage() {
         </div>
     );
 }
+
+const StatItem = ({ label, sublabel, detail }: { label: string; sublabel: string; detail: string }) => (
+    <motion.div
+        whileHover={{ scale: 1.05 }}
+        className="flex flex-col items-center lg:items-start text-center lg:text-left group cursor-default"
+    >
+        <span className="text-3xl md:text-5xl font-black text-foreground tracking-tighter mb-1 relative overflow-hidden">
+            {label}
+            <div className="absolute bottom-0 left-0 w-full h-1 bg-primary transform translate-x-[-101%] group-hover:translate-x-0 transition-transform duration-500" />
+        </span>
+        <span className="text-xs font-bold uppercase tracking-widest text-[#1A1C1E]/60 mb-2">{sublabel}</span>
+        <p className="text-[10px] md:text-xs text-foreground/40 max-w-[150px] leading-tight opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            {detail}
+        </p>
+    </motion.div>
+);

@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
+import { motion } from "framer-motion";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -19,28 +20,25 @@ export function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 w-full bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80 border-b border-border">
-      <div className="container mx-auto px-4">
-        <div className="flex h-16 items-center justify-between">
+    <header className="fixed top-6 inset-x-0 z-50 flex justify-center pointer-events-none">
+      <div className="container max-w-5xl px-4 pointer-events-auto">
+        <div className="bg-white/70 backdrop-blur-md border border-white/20 shadow-[0_8px_32px_rgba(0,0,0,0.08)] rounded-full px-6 py-2 md:py-3 flex items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2">
-            <span className="text-xl font-bold font-heading text-foreground">
+          <Link href="/" className="flex items-center gap-2 group">
+            <span className="text-xl font-black font-heading text-[#1A1C1E] tracking-tighter uppercase group-hover:text-primary transition-colors">
               Olympus
-            </span>
-            <span className="hidden sm:inline text-sm text-muted-foreground">
-              : The HR Icon
             </span>
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center gap-6">
-            {navLinks.map((link) => (
+          <nav className="hidden md:flex items-center gap-8">
+            {navLinks.filter(l => l.href !== "/contact").map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className={`text-sm font-medium transition-colors hover:text-primary ${pathname === link.href
-                    ? "text-primary"
-                    : "text-foreground/70"
+                className={`text-xs font-black uppercase tracking-widest transition-all hover:text-primary ${pathname === link.href
+                  ? "text-primary"
+                  : "text-[#1A1C1E]/60"
                   }`}
               >
                 {link.label}
@@ -52,53 +50,50 @@ export function Navbar() {
           <div className="flex items-center gap-4">
             <Link
               href="/contact"
-              className="hidden sm:inline-flex items-center justify-center rounded-lg bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground shadow-sm hover:bg-primary-hover transition-colors"
+              className="hidden sm:inline-flex items-center justify-center rounded-full bg-[#1A1C1E] px-6 py-2.5 text-xs font-black uppercase tracking-widest text-primary shadow-lg hover:bg-black transition-all hover:scale-105 active:scale-95"
             >
-              Register Now
+              Join Out!
             </Link>
 
             {/* Mobile Menu Button */}
             <button
               type="button"
-              className="md:hidden p-2 text-foreground"
+              className="md:hidden p-2 text-[#1A1C1E] hover:bg-[#1A1C1E]/5 rounded-full transition-colors"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               aria-label="Toggle menu"
             >
               {mobileMenuOpen ? (
-                <X className="h-6 w-6" />
+                <X className="h-5 w-5" />
               ) : (
-                <Menu className="h-6 w-6" />
+                <Menu className="h-5 w-5" />
               )}
             </button>
           </div>
         </div>
 
-        {/* Mobile Navigation */}
+        {/* Mobile Navigation Pill */}
         {mobileMenuOpen && (
-          <nav className="md:hidden py-4 border-t border-border">
-            <div className="flex flex-col gap-3">
+          <motion.nav
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="md:hidden mt-4 bg-white/90 backdrop-blur-xl border border-white/20 rounded-[2rem] p-6 shadow-2xl"
+          >
+            <div className="flex flex-col gap-4">
               {navLinks.map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
                   onClick={() => setMobileMenuOpen(false)}
-                  className={`text-base font-medium py-2 px-3 rounded-lg transition-colors ${pathname === link.href
-                      ? "bg-primary/10 text-primary"
-                      : "text-foreground/70 hover:bg-muted"
+                  className={`text-sm font-black uppercase tracking-widest py-2 transition-colors ${pathname === link.href
+                    ? "text-primary"
+                    : "text-foreground/70 hover:text-primary"
                     }`}
                 >
                   {link.label}
                 </Link>
               ))}
-              <Link
-                href="/contact"
-                onClick={() => setMobileMenuOpen(false)}
-                className="mt-2 inline-flex items-center justify-center rounded-lg bg-primary px-4 py-3 text-base font-semibold text-primary-foreground shadow-sm hover:bg-primary-hover transition-colors"
-              >
-                Register Now
-              </Link>
             </div>
-          </nav>
+          </motion.nav>
         )}
       </div>
     </header>
