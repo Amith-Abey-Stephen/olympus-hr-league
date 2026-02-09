@@ -83,7 +83,7 @@ import { CurvedTimeline } from "@/components/CurvedTimeline";
 
 export default function AgendaPage() {
     return (
-        <div className="flex flex-col min-h-screen bg-[#0A0D10]">
+        <div className="flex flex-col md:min-h-screen bg-[#0A0D10]">
             {/* Immersive Curved Timeline Section */}
             <CurvedTimeline />
 

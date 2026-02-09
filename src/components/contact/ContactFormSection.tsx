@@ -144,7 +144,7 @@ export function ContactFormSection() {
                         disabled={isSubmitting}
                         type="submit"
                         size="xl"
-                        className="w-full rounded-2xl h-16 text-lg font-black bg-black text-white hover:bg-black/90 group mt-4 disabled:opacity-70 disabled:cursor-not-allowed"
+                        className="w-full rounded-2xl h-16 text-md md:text-lg font-black bg-black text-white hover:bg-black/90 group mt-4 disabled:opacity-70 disabled:cursor-not-allowed"
                     >
                         {isSubmitting ? "Sending..." : "Let's get started!"}
                         {!isSubmitting && <ArrowRight className="ml-3 h-5 w-5 group-hover:translate-x-1 transition-transform" />}

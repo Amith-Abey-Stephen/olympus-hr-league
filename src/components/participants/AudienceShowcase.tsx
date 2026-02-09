@@ -13,7 +13,7 @@ export function AudienceShowcase() {
                     </h2>
                 </div>
 
-                <div className="relative flex flex-col gap-16 lg:block min-h-auto lg:min-h-[700px] max-w-6xl mx-auto ">
+                <div className="relative flex flex-col gap-16 lg:block md:min-h-[700px] lg:min-h-[700px] max-w-6xl mx-auto ">
                     {/* Engineering Students */}
                     <motion.div
                         whileHover={{ y: -10 }}

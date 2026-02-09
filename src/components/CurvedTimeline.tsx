@@ -88,10 +88,10 @@ export const CurvedTimeline = () => {
     return (
         <div ref={containerRef} className="relative h-[600vh] bg-[#0A0D10] text-white">
             {/* Sticky Visualization Section */}
-            <div className="sticky top-0 h-screen w-full flex flex-col items-center overflow-hidden">
+            <div className="sticky top-0 h-screen w-full flex flex-col items-center overflow-hidden pt-32">
 
                 {/* Header - High contrast, centered as per reference */}
-                <div className="text-center z-30 mt-16 md:mt-24 mb-6 px-4">
+                <div className="text-center z-30 mt-4 md:mt-6 mb-6 px-4">
                     <h2 className="text-3xl md:text-5xl lg:text-6xl font-extrabold font-heading tracking-widest uppercase mb-6 leading-tight max-w-5xl mx-auto stroke-text">
                         THE OLYMPUS JOURNEY: <br />
                         <span className="text-primary italic">CHRONOLOGICAL FLOW</span>
