@@ -40,7 +40,7 @@ export function Footer() {
           {/* Office/Location */}
           <div>
             <span className="inline-block px-3 py-1 rounded-full bg-background text-foreground text-xs font-medium mb-4">
-              event format
+              Event Format
             </span>
             <h3 className="text-xl md:text-2xl font-bold font-heading mb-2">
               Single-Day Immersive
@@ -59,18 +59,29 @@ export function Footer() {
           {/* Contact */}
           <div>
             <span className="inline-block px-3 py-1 rounded-full bg-background text-foreground text-xs font-medium mb-4">
-              contact
+              Contact
             </span>
             <div className="space-y-2 mb-4">
-              {contacts.map((contact) => (
-                <div key={contact.name} className="flex items-center gap-2">
-                  <Phone className="h-4 w-4" />
-                  <span className="text-sm">{contact.name}: {contact.phone}</span>
-                </div>
-              ))}
+              {contacts.map((contact) => {
+                const phoneWithoutSpaces = contact.phone.replace(/\s+/g, '');
+                const whatsappUrl = `https://wa.me/${phoneWithoutSpaces}?text=Hi%20${contact.name.replace(/\s+/g, '%20')}%2C%20I%27m%20interested%20in%20Olympus`;
+                return (
+                  <div key={contact.name} className="flex items-center gap-2">
+                    <Phone className="h-4 w-4" />
+                    <a 
+                      href={whatsappUrl} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="text-sm hover:text-primary transition-colors underline underline-offset-2 text-decoration-none"
+                    >
+                      {contact.name}: {contact.phone}
+                    </a>
+                  </div>
+                );
+              })}
             </div>
             <p className="text-xs text-background/50 mb-4">
-              *reach out for any queries or support
+              *Reach out for any queries or support
             </p>
 
             {/* Social Icons */}

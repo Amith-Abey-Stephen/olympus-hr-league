@@ -30,7 +30,7 @@ export default function AboutPage() {
   return (
     <div className="flex flex-col">
       {/* Hero Section - Reference Inspired Split Layout */}
-      <section className="relative min-h-screen flex flex-col justify-center items-center py-20 overflow-hidden bg-background">
+      <section className="relative md:min-h-screen flex flex-col justify-center items-center py-20 overflow-hidden bg-background">
         {/* Inverted Pyramid Grid Background */}
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-full pointer-events-none z-0">
           <div className="grid grid-cols-7 md:grid-cols-11 gap-px opacity-20">
@@ -146,7 +146,7 @@ export default function AboutPage() {
       </section>
 
       {/* What we're really good at - Reference Inspired Layout */}
-      <section className="min-h-screen flex flex-col justify-center py-20 bg-background relative overflow-hidden">
+      <section className="md:min-h-screen flex flex-col justify-center py-20 bg-background relative overflow-hidden">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16 md:mb-24 max-w-4xl mx-auto">
             <h2 className="text-5xl md:text-7xl lg:text-8xl font-extrabold font-heading text-foreground leading-tight tracking-tighter mb-4">

@@ -8,7 +8,7 @@ export default function HomePage() {
   return (
     <div className="flex flex-col">
       {/* Hero Section */}
-      <section className="relative min-h-screen flex flex-col justify-center pt-40 pb-20 md:pt-48 md:pb-32 overflow-hidden">
+      <section className="relative md:min-h-screen flex flex-col justify-center pt-40 pb-20 md:pt-48 md:pb-32 overflow-hidden">
         {/* Yellow Semi-Circle Background */}
         <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/4 w-[150vw] h-[60vh] md:w-[150vw] md:h-[90vh] lg:w-[100vw] rounded-t-full bg-primary z-0" />
 
@@ -87,10 +87,10 @@ export default function HomePage() {
             </h2>
           </div>
 
-          <div className="relative min-h-[800px] md:min-h-[700px] max-w-6xl mx-auto">
+          <div className="flex flex-col md:relative gap-8 md:gap-0 md:min-h-[800px] lg:min-h-[700px] max-w-6xl mx-auto">
             {/* Empowerment / Authority - Top Center */}
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 flex flex-col md:flex-row items-end gap-0 z-20 w-full md:w-auto px-4 md:px-0">
-              <div className="bg-white p-8 md:p-10 rounded-[32px] shadow-xl border border-border max-w-sm relative group hover:border-primary transition-all duration-300">
+            <div className="md:absolute md:top-0 md:left-1/2 md:-translate-x-1/2 flex flex-col md:flex-row items-end gap-0 z-20 w-full md:w-auto px-4 md:px-0">
+              <div className="bg-white p-8 md:p-10 rounded-[32px] shadow-xl border border-border max-w-sm relative group hover:border-primary transition-all duration-300 text-center md:text-left">
                 <div className="w-4 h-4 bg-primary absolute top-6 left-6" />
                 <h3 className="text-2xl font-bold text-foreground mb-4 mt-4">Authority & Insights</h3>
                 <p className="text-sm text-foreground/60 leading-relaxed">
@@ -103,11 +103,11 @@ export default function HomePage() {
             </div>
 
             {/* Customized Strategies / Flow - Middle Left */}
-            <div className="absolute top-1/2 -translate-y-1/2 left-0 md:left-[5%] flex flex-col md:flex-row items-end gap-0 z-10 w-full md:w-auto px-4 md:px-0 mt-8 md:mt-0">
-              <div className="bg-white p-8 md:p-10 rounded-[32px] shadow-xl border border-border max-w-sm relative group hover:border-primary transition-all duration-300">
+            <div className="md:absolute md:top-1/2 md:-translate-y-1/2 md:left-0 md:left-[5%] flex flex-col md:flex-row items-end gap-0 z-10 w-full md:w-auto px-4 md:px-0 md:mt-0">
+              <div className="bg-white p-8 md:p-10 rounded-[32px] shadow-xl border border-border max-w-sm relative group hover:border-primary transition-all duration-300 text-center md:text-left">
                 <div className="w-4 h-4 bg-primary absolute top-6 left-6" />
                 <h3 className="text-2xl font-bold text-foreground mb-4 mt-4">Flow & Connection</h3>
-                <p className="text-sm text-foreground/60 leading-relaxed">
+                <p className="text-sm text-foreground/60 leading-relaxed mx-auto md:mx-0">
                   Experience structured networking and hands-on design challenges that bridge the gap between theory and industry practice.
                 </p>
               </div>
@@ -117,11 +117,11 @@ export default function HomePage() {
             </div>
 
             {/* Proven Expertise / Growth - Bottom Right */}
-            <div className="absolute bottom-0 right-0 md:right-[5%] flex flex-col md:flex-row items-end gap-0 z-10 w-full md:w-auto px-4 md:px-0 mt-8 md:mt-0">
-              <div className="bg-white p-8 md:p-10 rounded-[32px] shadow-xl border border-border max-w-sm relative group hover:border-primary transition-all duration-300">
+            <div className="md:absolute md:bottom-0 md:right-0 md:right-[5%] flex flex-col md:flex-row items-end gap-0 z-10 w-full md:w-auto px-4 md:px-0 md:mt-0">
+              <div className="bg-white p-8 md:p-10 rounded-[32px] shadow-xl border border-border max-w-sm relative group hover:border-primary transition-all duration-300 text-center md:text-left">
                 <div className="w-4 h-4 bg-primary absolute top-6 left-6" />
                 <h3 className="text-2xl font-bold text-foreground mb-4 mt-4">Strategic Growth</h3>
-                <p className="text-sm text-foreground/60 leading-relaxed">
+                <p className="text-sm text-foreground/60 leading-relaxed mx-auto md:mx-0">
                   Accelerate your trajectory with peer-to-peer labs and deep-dive audits of modern people management strategies.
                 </p>
               </div>
@@ -131,7 +131,7 @@ export default function HomePage() {
             </div>
 
             {/* Center decorative element */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-5 hidden md:block">
+            <div className="md:absolute md:top-1/2 md:left-1/2 md:-translate-x-1/2 md:-translate-y-1/2 opacity-5 hidden md:block">
               <Target className="w-96 h-96 text-foreground" />
             </div>
           </div>
@@ -147,7 +147,7 @@ export default function HomePage() {
       </section>
 
       {/* Who Should Participate */}
-      <section className="min-h-screen flex flex-col justify-center py-6 bg-background relative overflow-hidden">
+      <section className="md:min-h-screen flex flex-col justify-center py-6 bg-background relative overflow-hidden">
         <div className="container mx-auto px-4">
           {/* Section Title */}
           <div className="text-center mb-16">
@@ -220,7 +220,7 @@ export default function HomePage() {
       {/* Recognition */}
       {/* Recognition */}
       {/* Recognition */}
-      <section className="min-h-screen flex flex-col justify-center py-6  bg-linear-to-b from-background to-muted/30 relative overflow-hidden">
+      <section className="md:min-h-screen flex flex-col justify-center py-6  bg-linear-to-b from-background to-muted/30 relative overflow-hidden">
         {/* Background decorative elements */}
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute top-1/4 left-1/4 w-64 h-64 rounded-full bg-primary/5 blur-3xl" />
