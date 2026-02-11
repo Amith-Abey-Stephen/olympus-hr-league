@@ -2,6 +2,7 @@ import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ParticipantHero } from "@/components/participants/ParticipantHero";
 import { AudienceShowcase } from "@/components/participants/AudienceShowcase";
+import { RegisterButton } from "@/components/RegisterButton";
 
 export default function ParticipantsPage() {
     return (
@@ -20,10 +21,10 @@ export default function ParticipantsPage() {
                         YOUR <span className="text-primary italic">HR CAREER?</span>
                     </h2>
                     <Button asChild size="xl" className="rounded-full px-12 h-16 text-lg font-bold group">
-                        <a href="https://mulearn.org/r/olympus_thehrleague" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3">
+                        <RegisterButton className="flex items-center gap-3">
                             Register Now
                             <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
-                        </a>
+                        </RegisterButton>
                     </Button>
                 </div>
             </section>

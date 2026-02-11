@@ -121,7 +121,7 @@ export function Footer() {
       <div className="border-t border-background/10 py-4">
         <div className="container mx-auto px-4 flex flex-col sm:flex-row justify-between items-center gap-2 text-xs text-background/50">
           <p>© {new Date().getFullYear()} Olympus: The HR Icon</p>
-          <p>Organized by <Link href="https://mulearn.org" className="text-primary font-semibold">µLearn HR Interest Group</Link></p>
+          <p>Organized by <a href="https://mulearn.org" target="_blank" rel="noopener noreferrer" className="text-primary font-semibold">µLearn HR Interest Group</a></p>
         </div>
       </div>
     </footer>

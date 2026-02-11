@@ -90,9 +90,9 @@ export default function ContactPage() {
                             {/* Social Links */}
                             <div className="pt-8 flex gap-4">
                                 {socialLinks.map((social, i) => (
-                                    <Link key={i} href={social.href} className="w-10 h-10 rounded-full border border-border flex items-center justify-center hover:bg-primary hover:border-primary hover:text-black transition-all">
+                                    <a key={i} href={social.href} target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full border border-border flex items-center justify-center hover:bg-primary hover:border-primary hover:text-black transition-all">
                                         {social.icon}
-                                    </Link>
+                                    </a>
                                 ))}
                             </div>
                         </div>
