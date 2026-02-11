@@ -3,6 +3,7 @@ import { ArrowRight, Users, Trophy, Target, Sparkles, BookOpen } from "lucide-re
 import LottiePlayer from "@/components/ui/Lottieplayer";
 import { Button } from "@/components/ui/button";
 import { WhyOlympusScroll } from "@/components/home/WhyOlympusScroll";
+import { RegisterButton } from "@/components/RegisterButton";
 
 export default function HomePage() {
   return (
@@ -56,10 +57,10 @@ export default function HomePage() {
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Button asChild variant="white" size="xl">
-                <a href="https://mulearn.org/r/olympus_thehrleague" target="_blank" rel="noopener noreferrer">
+                <RegisterButton className="inline-flex items-center">
                   Register Now
                   <ArrowRight className="ml-2 h-5 w-5" />
-                </a>
+                </RegisterButton>
               </Button>
               <Button asChild variant="secondary" size="xl">
                 <Link href="/agenda">

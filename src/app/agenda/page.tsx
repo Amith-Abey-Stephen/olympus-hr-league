@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Clock, Users, Coffee, Utensils, Award, BookOpen, Cpu, Briefcase } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { RegisterButton } from "@/components/RegisterButton";
 
 const fullAgenda = [
     {
@@ -96,9 +97,9 @@ export default function AgendaPage() {
                         Be part of the founding cohort of Olympus
                     </h2>
                     <Button asChild variant="white" size="xl" className="rounded-full px-10">
-                        <a href="https://mulearn.org/r/olympus_thehrleague" target="_blank" rel="noopener noreferrer">
+                        <RegisterButton>
                             Register Now
-                        </a>
+                        </RegisterButton>
                     </Button>
                 </div>
             </section>

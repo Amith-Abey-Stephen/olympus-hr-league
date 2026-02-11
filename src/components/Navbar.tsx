@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { motion } from "framer-motion";
+import { RegisterButton } from "./RegisterButton";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -48,14 +49,11 @@ export function Navbar() {
 
           {/* CTA Button + Mobile Toggle */}
           <div className="flex items-center gap-4">
-            <a
-              href="https://mulearn.org/r/olympus_thehrleague"
-              target="_blank"
-              rel="noopener noreferrer"
+            <RegisterButton
               className="hidden lg:inline-flex items-center justify-center rounded-full bg-[#1A1C1E] px-6 py-2.5 text-xs font-black uppercase tracking-widest text-primary shadow-lg hover:bg-black transition-all hover:scale-105 active:scale-95"
             >
               Register Now
-            </a>
+            </RegisterButton>
 
             {/* Mobile Menu Button */}
             <button
