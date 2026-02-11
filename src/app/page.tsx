@@ -45,7 +45,7 @@ export default function HomePage() {
                 <Users className="h-5 w-5 text-primary" />
                 <span>200 Attendees (120 Students + 80 Professionals)</span>
               </div>
-              <div className="flex items-center gap-2">
+              <div className="flex items-start gap-2">
                 <Target className="h-5 w-5 text-primary" />
                 <span>µLearn HR Interest Group</span>
               </div>
