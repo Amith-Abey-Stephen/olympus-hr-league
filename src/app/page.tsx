@@ -4,6 +4,30 @@ import LottiePlayer from "@/components/ui/Lottieplayer";
 import { Button } from "@/components/ui/button";
 import { WhyOlympusScroll } from "@/components/home/WhyOlympusScroll";
 import { RegisterButton } from "@/components/RegisterButton";
+import Image from "next/image";
+
+const CARESTACK_LOGO = '/assets/carestack-logo.webp';
+const HR_EVOLVE_LOGO = '/assets/hr-evolve-logo.webp';
+const MULEARN_LOGO = '/assets/mulearn-logo-2.webp';
+
+// Fixed logos array structure
+const logos = [
+  {
+    src: CARESTACK_LOGO,
+    alt: "CareStack Logo",
+    height: 36 // Adjust based on your logo's optimal display size
+  },
+  {
+    src: HR_EVOLVE_LOGO,
+    alt: "HR Evolve Logo",
+    height: 40 // Slightly taller for this logo
+  },
+  {
+    src: MULEARN_LOGO,
+    alt: "Mulearn Logo",
+    height: 36
+  },
+];
 
 export default function HomePage() {
   return (
@@ -12,21 +36,35 @@ export default function HomePage() {
       <section className="relative md:min-h-screen flex flex-col justify-center pt-40 pb-20 md:pt-48 md:pb-32 overflow-hidden">
         {/* Yellow Semi-Circle Background */}
         <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/4 w-[150vw] h-[60vh] md:w-[150vw] md:h-[90vh] lg:w-[100vw] rounded-t-full bg-primary z-0" />
-
+        
         {/* Birds Lottie Animation */}
         <div className="absolute top-1/2 left-1/4 -translate-x-1/2 -translate-y-1/2 z-1">
           <LottiePlayer src="/animations/birdies.lottie" invert />
         </div>
-
+        
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/20 border border-primary mb-6">
-              <Sparkles className="h-4 w-4 text-foreground" />
-              <span className="text-sm font-medium text-foreground">
-                Founding Cohort Registrations Open
-              </span>
+            {/* Fixed logo display section */}
+            <div className="inline-flex items-center gap-4 md:gap-6 px-6 py-3 rounded-full bg-white/90 backdrop-blur-sm border border-primary/20 mb-6 shadow-sm">
+              {logos.map((logo, index) => (
+                <div key={logo.alt} className="flex items-center">
+                  <Image
+                    src={logo.src}
+                    alt={logo.alt}
+                    width={200}
+                    height={logo.height}
+                    className="h-8 md:h-10 w-auto object-contain"
+                    quality={100}
+                    priority
+                  />
+                  {/* Separator between logos except for the last one */}
+                  {index < logos.length - 1 && (
+                    <div className="w-px h-8 bg-border/30 ml-4 md:ml-6" />
+                  )}
+                </div>
+              ))}
             </div>
-
+            
             <h1 className="text-3xl md:text-6xl lg:text-7xl font-extrabold font-heading text-foreground mb-4">
               Olympus: The HR Icon
             </h1>
@@ -35,11 +73,9 @@ export default function HomePage() {
                 Where Leaders Learn to Lead People
               </p>
             </div>
-
             <h2 className="text-2xl md:text-3xl font-bold font-heading text-foreground/80 mb-6">
               Flagship HR Experience 2026
             </h2>
-
             <div className="flex flex-wrap items-center justify-center gap-6 mb-8 text-foreground/70">
               <div className="flex items-center gap-2">
                 <Users className="h-5 w-5 text-primary" />
@@ -50,11 +86,9 @@ export default function HomePage() {
                 <span>µLearn HR Interest Group</span>
               </div>
             </div>
-
             <p className="text-lg text-foreground/70 max-w-2xl mx-auto mb-8">
               Olympus is a flagship HR experience designed to bridge academic learning and industry practice through real-world sessions, expert-led discussions, and meaningful professional connections.
             </p>
-
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Button asChild variant="white" size="xl">
                 <RegisterButton className="inline-flex items-center">
