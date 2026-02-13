@@ -7,7 +7,7 @@ export const sharedMetadata: Metadata = {
     keywords: siteConfig.keywords,
     authors: siteConfig.authors,
     openGraph: {
-        title: "Olympus – The HR League",
+        title: "Olympus – The HR Icon",
         description:
             "Bridge academic learning with real-world corporate decision-making",
         type: "website",

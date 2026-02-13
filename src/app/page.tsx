@@ -53,7 +53,7 @@ export default function HomePage() {
                     alt={logo.alt}
                     width={200}
                     height={logo.height}
-                    className="h-8 md:h-10 w-auto object-contain"
+                    className="h-6 md:h-10 w-auto object-contain"
                     quality={100}
                     priority
                   />
@@ -77,11 +77,11 @@ export default function HomePage() {
               Flagship HR Experience 2026
             </h2>
             <div className="flex flex-wrap items-center justify-center gap-6 mb-8 text-foreground/70">
-              <div className="flex items-center gap-2">
+              <div className="flex items-start gap-1 md:gap-2">
                 <Users className="h-5 w-5 text-primary" />
                 <span>200 Attendees (120 Students + 80 Professionals)</span>
               </div>
-              <div className="flex items-start gap-2">
+              <div className="flex items-center gap-2">
                 <Target className="h-5 w-5 text-primary" />
                 <span>µLearn HR Interest Group</span>
               </div>

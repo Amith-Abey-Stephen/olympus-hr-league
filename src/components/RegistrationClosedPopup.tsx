@@ -70,7 +70,7 @@ export function RegistrationClosedPopup({
                 {/* Content */}
                 <div className="px-6 py-8">
                   <p className="text-foreground/70 text-center mb-6">
-                    Registration for Olympus: The HR League opens on
+                    Registration for Olympus: The HR Icon opens on
                   </p>
                   
                   <div className="bg-secondary/10 border-2 border-primary rounded-lg py-6 px-4 text-center mb-6">
