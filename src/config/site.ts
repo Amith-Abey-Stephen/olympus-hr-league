@@ -1,11 +1,11 @@
 export const siteConfig = {
-    name: "Olympus – The HR League",
+    name: "Olympus – The HR Icon",
     description:
-        "Olympus – The HR League is a hybrid HR and leadership challenge bridging academic learning with real-world corporate decision-making. Organized by µLearn HR Interest Group.",
+        "Olympus – The HR Icon is a hybrid HR and leadership challenge bridging academic learning with real-world corporate decision-making. Organized by µLearn HR Interest Group.",
     url: "https://olympus.mulearn.org",
     ogImage: "/og-image.png",
     keywords: [
-        "HR League",
+        "HR Icon",
         "Olympus",
         "µLearn",
         "Leadership",

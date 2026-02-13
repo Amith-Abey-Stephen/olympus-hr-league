@@ -18,11 +18,11 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "Olympus – The HR League | µLearn",
+  title: "Olympus – The HR Icon | µLearn",
   description:
-    "Olympus – The HR League is a hybrid HR and leadership challenge bridging academic learning with real-world corporate decision-making. Organized by µLearn HR Interest Group.",
+    "Olympus – The HR Icon is a hybrid HR and leadership challenge bridging academic learning with real-world corporate decision-making. Organized by µLearn HR Interest Group.",
   keywords: [
-    "HR League",
+    "HR Icon",
     "Olympus",
     "µLearn",
     "Leadership",
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "µLearn HR Interest Group" }],
   openGraph: {
-    title: "Olympus – The HR League",
+    title: "Olympus – The HR Icon",
     description:
       "Bridge academic learning with real-world corporate decision-making",
     type: "website",
