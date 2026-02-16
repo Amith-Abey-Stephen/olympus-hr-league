@@ -8,24 +8,35 @@ import Image from "next/image";
 
 const CARESTACK_LOGO = '/assets/carestack-logo.webp';
 const HR_EVOLVE_LOGO = '/assets/hr-evolve-logo.webp';
-const MULEARN_LOGO = '/assets/mulearn-logo-2.webp';
+const MULEARN_LOGO = '/assets/mulearn-foundation-logo-black.png';
+const GTECH_INDIA_LOGO = '/assets/gtech-logo.svg';
 
 // Fixed logos array structure
 const logos = [
   {
     src: CARESTACK_LOGO,
     alt: "CareStack Logo",
-    height: 36 // Adjust based on your logo's optimal display size
+    height: 36,// Adjust based on your logo's optimal display size
+    link: "https://carestack.com/" 
   },
   {
     src: HR_EVOLVE_LOGO,
     alt: "HR Evolve Logo",
-    height: 40 // Slightly taller for this logo
+    height: 40, // Slightly taller for this logo
+    link: "https://hrevolve.org/" 
   },
+  {
+    src: GTECH_INDIA_LOGO,
+    alt: "Gtech India Logo",
+    height: 36,
+    link: "https://www.gtechindia.org/"
+  },
+  
   {
     src: MULEARN_LOGO,
     alt: "Mulearn Logo",
-    height: 36
+    height: 36,
+    link: "https://mulearn.org/"
   },
 ];
 
@@ -47,7 +58,7 @@ export default function HomePage() {
             {/* Fixed logo display section */}
             <div className="inline-flex items-center gap-4 md:gap-6 px-6 py-3 rounded-full bg-white/90 backdrop-blur-sm border border-primary/20 mb-6 shadow-sm">
               {logos.map((logo, index) => (
-                <div key={logo.alt} className="flex items-center">
+                <Link href={logo.link} target="_blank" key={logo.alt} className="flex items-center">
                   <Image
                     src={logo.src}
                     alt={logo.alt}
@@ -61,7 +72,7 @@ export default function HomePage() {
                   {index < logos.length - 1 && (
                     <div className="w-px h-8 bg-border/30 ml-4 md:ml-6" />
                   )}
-                </div>
+                </Link>
               ))}
             </div>
             

@@ -18,8 +18,8 @@ export default function LottiePlayer({
   autoplay = true,
   loop = true,
   speed = 1,
-  width = 1800,
-  height = 1800,
+  width = 1200,
+  height = 1200,
   className = '',
   invert = false,
 }: LottiePlayerProps) {
