@@ -1,19 +1,16 @@
 "use client";
 
 import { useState } from "react";
+import { siteConfig } from "@/config/site";
 import { useRegistrationStatus } from "@/hooks/useRegistrationStatus";
 import { RegistrationClosedPopup } from "./RegistrationClosedPopup";
-import { siteConfig } from "@/config/site";
 
 interface RegisterButtonProps {
   children: React.ReactNode;
   className?: string;
 }
 
-export function RegisterButton({
-  children,
-  className,
-}: RegisterButtonProps) {
+export function RegisterButton({ children, className }: RegisterButtonProps) {
   const { isOpen: isRegistrationOpen } = useRegistrationStatus();
   const [showPopup, setShowPopup] = useState(false);
 

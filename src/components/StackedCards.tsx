@@ -1,9 +1,9 @@
 "use client";
 
-import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
+import { Heart, type LucideIcon, Shield, Target, Users } from "lucide-react";
+import { useRef } from "react";
 import { cn } from "@/lib/utils";
-import { Users, Target, Heart, Shield, type LucideIcon } from "lucide-react";
 
 // Icon mapping for serializable icon names
 const iconMap: Record<string, LucideIcon> = {
@@ -46,9 +46,9 @@ interface StackedCardItemProps {
   totalCards: number;
 }
 
-function StackedCardItem({ card, index, totalCards }: StackedCardItemProps) {
+function StackedCardItem({ card, index }: StackedCardItemProps) {
   const cardRef = useRef<HTMLDivElement>(null);
-  
+
   const { scrollYProgress } = useScroll({
     target: cardRef,
     offset: ["start end", "end start"],
@@ -56,8 +56,16 @@ function StackedCardItem({ card, index, totalCards }: StackedCardItemProps) {
 
   // Card reveals as you scroll - starts with translateY offset, moves to 0
   const y = useTransform(scrollYProgress, [0, 0.3, 0.6], [100, 0, 0]);
-  const opacity = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0.3, 1, 1, 0.3]);
-  const scale = useTransform(scrollYProgress, [0, 0.3, 0.7, 1], [0.95, 1, 1, 0.98]);
+  const opacity = useTransform(
+    scrollYProgress,
+    [0, 0.2, 0.8, 1],
+    [0.3, 1, 1, 0.3],
+  );
+  const scale = useTransform(
+    scrollYProgress,
+    [0, 0.3, 0.7, 1],
+    [0.95, 1, 1, 0.98],
+  );
 
   // Calculate z-index - later cards should be ON TOP (higher z-index)
   const zIndex = index + 1;
@@ -68,9 +76,9 @@ function StackedCardItem({ card, index, totalCards }: StackedCardItemProps) {
   return (
     <motion.div
       ref={cardRef}
-      style={{ 
-        y, 
-        opacity, 
+      style={{
+        y,
+        opacity,
         scale,
         zIndex,
       }}
@@ -80,7 +88,7 @@ function StackedCardItem({ card, index, totalCards }: StackedCardItemProps) {
         <div className="flex flex-col md:flex-row gap-8 items-start">
           {/* Large Number */}
           <div className="shrink-0">
-            <span 
+            <span
               className="text-[120px] md:text-[180px] font-extrabold leading-none text-transparent"
               style={{
                 WebkitTextStroke: "2px rgba(255,255,255,0.3)",
@@ -97,9 +105,8 @@ function StackedCardItem({ card, index, totalCards }: StackedCardItemProps) {
               <div className="w-10 h-10 rounded-lg bg-primary/20 flex items-center justify-center">
                 <IconComponent className="h-5 w-5 text-primary" />
               </div>
-             
             </div>
-            
+
             <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold font-heading mb-4">
               {card.title}
             </h3>
@@ -110,7 +117,7 @@ function StackedCardItem({ card, index, totalCards }: StackedCardItemProps) {
         </div>
 
         {/* Decorative line at bottom */}
-        <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-primary/50 to-transparent" />
+        <div className="absolute bottom-0 left-0 right-0 h-1 bg-linear-to-r from-transparent via-primary/50 to-transparent" />
       </div>
     </motion.div>
   );

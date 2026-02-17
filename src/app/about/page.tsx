@@ -1,9 +1,8 @@
-import Link from "next/link";
 import { ArrowRight } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { StackedCards } from "@/components/StackedCards";
+import Link from "next/link";
 import { HeroEmblem } from "@/components/about/HeroEmblem";
-
+import { StackedCards } from "@/components/StackedCards";
+import { Button } from "@/components/ui/button";
 
 const objectives = [
   {
@@ -43,15 +42,17 @@ export default function AboutPage() {
               // Create the stepped/pyramid logic
               const isVisible = row <= 5 - dist;
 
+              // biome-ignore lint/suspicious/noArrayIndexKey: strictly decorative static grid
               if (!isVisible) return <div key={i} className="aspect-square" />;
 
               return (
                 <div
+                  // biome-ignore lint/suspicious/noArrayIndexKey: strictly decorative static grid
                   key={i}
                   className="aspect-square bg-linear-to-b from-primary/60 to-primary/5 border border-primary/20 backdrop-blur-[2px]"
                   style={{
-                    opacity: 1 - (row * 0.15),
-                    transform: `translateY(${row * 4}px)`
+                    opacity: 1 - row * 0.15,
+                    transform: `translateY(${row * 4}px)`,
                   }}
                 />
               );
@@ -64,10 +65,11 @@ export default function AboutPage() {
         <div className="container mx-auto px-4 relative z-10 flex flex-col items-center">
           {/* Top Label */}
           <div className="mt-26 text-center">
-
             <div className="flex items-center justify-center gap-4">
               <div className="h-px w-12 bg-primary/30" />
-              <span className="text-sm font-medium text-foreground tracking-widest">OLYMPUS 2026</span>
+              <span className="text-sm font-medium text-foreground tracking-widest">
+                OLYMPUS 2026
+              </span>
               <div className="h-px w-12 bg-primary/30" />
             </div>
           </div>
@@ -81,14 +83,24 @@ export default function AboutPage() {
           </div>
 
           {/* Central CTA */}
-          <div className="mb-24 scale-110">
-            <Button asChild variant="default" size="xl" className="rounded-full px-12 py-8 text-lg font-bold shadow-[0_15px_30px_rgba(248,197,56,0.2)] group overflow-hidden relative">
-              <a href="https://mulearn.org/r/olympus_thehrleague" target="_blank" rel="noopener noreferrer" className="relative z-10 flex items-center gap-2">
+          {/* <div className="mb-24 scale-110">
+            <Button
+              asChild
+              variant="default"
+              size="xl"
+              className="rounded-full px-12 py-8 text-lg font-bold shadow-[0_15px_30px_rgba(248,197,56,0.2)] group overflow-hidden relative"
+            >
+              <a
+                href="https://mulearn.org/r/olympus_thehrleague"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="relative z-10 flex items-center gap-2"
+              >
                 Start the Journey
                 <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
               </a>
             </Button>
-          </div>
+          </div> */}
 
           {/* Bottom Content Split */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-32 w-full max-w-6xl mt-auto">
@@ -98,7 +110,8 @@ export default function AboutPage() {
                 <span className="text-primary">The HR Icon</span>
               </h2>
               <p className="text-foreground/60 leading-relaxed max-w-sm">
-                An inaugural flagship HR initiative designed to bridge the critical gap between academic theory and industry practice.
+                An inaugural flagship HR initiative designed to bridge the
+                critical gap between academic theory and industry practice.
               </p>
             </div>
 
@@ -108,9 +121,14 @@ export default function AboutPage() {
                 <span className="text-primary">Concept</span>
               </h2>
               <p className="text-foreground/60 leading-relaxed max-w-sm">
-                Olympus brings together students and professionals in a dynamic environment where real-world challenges meet cutting-edge innovation.
+                Olympus brings together students and professionals in a dynamic
+                environment where real-world challenges meet cutting-edge
+                innovation.
               </p>
-              <Link href="/agenda" className="inline-flex items-center gap-2 text-sm font-bold mt-4 hover:text-primary transition-colors text-foreground/80">
+              <Link
+                href="/agenda"
+                className="inline-flex items-center gap-2 text-sm font-bold mt-4 hover:text-primary transition-colors text-foreground/80"
+              >
                 View detailed agenda <ArrowRight className="h-4 w-4" />
               </Link>
             </div>
@@ -129,13 +147,14 @@ export default function AboutPage() {
               The Vision Pillars
             </h2>
             <p className="text-lg text-foreground/60 max-w-2xl mx-auto">
-              Our mission is driven by three core pillars that define the Olympus experience.
+              Our mission is driven by three core pillars that define the
+              Olympus experience.
             </p>
           </div>
 
           <StackedCards
             cards={objectives.map((obj, index) => ({
-              number: String(index + 1).padStart(2, '0'),
+              number: String(index + 1).padStart(2, "0"),
               title: obj.title,
               description: obj.description,
               iconName: obj.iconName,
@@ -153,9 +172,26 @@ export default function AboutPage() {
               What Makes Olympus <br />
               <span className="relative inline-block px-4">
                 Different
-                <svg className="absolute inset-0 -m-4 w-[calc(100%+2rem)] h-[calc(100%+2rem)] text-primary opacity-40 -z-10" viewBox="0 0 400 150" fill="none" preserveAspectRatio="none">
-                  <path d="M30,75 C30,30 200,30 370,75 C370,120 200,120 30,75" stroke="currentColor" strokeWidth="4" strokeLinecap="round" />
-                  <path d="M50,85 C50,45 180,45 350,85 C350,125 180,125 50,85" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeDasharray="10 5" />
+                <svg
+                  className="absolute inset-0 -m-4 w-[calc(100%+2rem)] h-[calc(100%+2rem)] text-primary opacity-40 -z-10"
+                  viewBox="0 0 400 150"
+                  fill="none"
+                  preserveAspectRatio="none"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M30,75 C30,30 200,30 370,75 C370,120 200,120 30,75"
+                    stroke="currentColor"
+                    strokeWidth="4"
+                    strokeLinecap="round"
+                  />
+                  <path
+                    d="M50,85 C50,45 180,45 350,85 C350,125 180,125 50,85"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeDasharray="10 5"
+                  />
                 </svg>
               </span>
             </h2>
@@ -166,12 +202,29 @@ export default function AboutPage() {
             <div className="w-full sm:w-[280px] bg-secondary p-8 rounded-sm shadow-2xl transform md:-translate-y-12 hover:scale-105 transition-all duration-300">
               <div className="h-48 md:h-56 mb-8 flex items-center justify-center">
                 {/* Abstract Artistic SVG - Tornado/Spiral */}
-                <svg viewBox="0 0 100 100" className="w-20 h-20 text-primary">
-                  <path d="M50 85 L50 20 M30 30 L70 30 M35 45 L65 45 M40 60 L60 60 M45 75 L55 75" stroke="currentColor" strokeWidth="4" strokeLinecap="round" />
-                  <path d="M10 20 C10 10 90 10 90 20 C90 30 10 30 10 40 C10 50 90 50 90 60 C90 70 10 70 10 80" stroke="currentColor" strokeWidth="2" fill="none" strokeOpacity="0.3" />
+                <svg
+                  viewBox="0 0 100 100"
+                  className="w-20 h-20 text-primary"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M50 85 L50 20 M30 30 L70 30 M35 45 L65 45 M40 60 L60 60 M45 75 L55 75"
+                    stroke="currentColor"
+                    strokeWidth="4"
+                    strokeLinecap="round"
+                  />
+                  <path
+                    d="M10 20 C10 10 90 10 90 20 C90 30 10 30 10 40 C10 50 90 50 90 60 C90 70 10 70 10 80"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    fill="none"
+                    strokeOpacity="0.3"
+                  />
                 </svg>
               </div>
-              <h3 className="text-xl md:text-2xl font-bold text-secondary-foreground mb-4 uppercase leading-tight">Strategic <br /> Depth</h3>
+              <h3 className="text-xl md:text-2xl font-bold text-secondary-foreground mb-4 uppercase leading-tight">
+                Strategic <br /> Depth
+              </h3>
               <p className="text-secondary-foreground/60 text-sm leading-relaxed">
                 Analyzing the "organizational soul" and ethical gray areas.
               </p>
@@ -179,14 +232,46 @@ export default function AboutPage() {
 
             {/* Card 2 - Middle Offset */}
             <div className="w-full sm:w-[280px] bg-secondary p-8 rounded-sm shadow-2xl hover:scale-105 transition-all duration-300 z-10">
-              <h3 className="text-xl md:text-2xl font-bold text-secondary-foreground mb-8 uppercase leading-tight">Crisis <br /> Leadership</h3>
+              <h3 className="text-xl md:text-2xl font-bold text-secondary-foreground mb-8 uppercase leading-tight">
+                Crisis <br /> Leadership
+              </h3>
               <div className="h-48 md:h-56 mb-8 flex items-center justify-center">
                 {/* Abstract Artistic SVG - Magnet/U-shape */}
-                <svg viewBox="0 0 100 100" className="w-20 h-20 text-primary">
-                  <path d="M30 30 V60 C30 75 70 75 70 60 V30" stroke="currentColor" strokeWidth="8" fill="none" strokeLinecap="round" />
-                  <rect x="25" y="20" width="10" height="15" fill="currentColor" rx="1" />
-                  <rect x="65" y="20" width="10" height="15" fill="currentColor" rx="1" />
-                  <path d="M40 70 H60" stroke="white" strokeWidth="2" strokeLinecap="round" className="opacity-20" />
+                <svg
+                  viewBox="0 0 100 100"
+                  className="w-20 h-20 text-primary"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M30 30 V60 C30 75 70 75 70 60 V30"
+                    stroke="currentColor"
+                    strokeWidth="8"
+                    fill="none"
+                    strokeLinecap="round"
+                  />
+                  <rect
+                    x="25"
+                    y="20"
+                    width="10"
+                    height="15"
+                    fill="currentColor"
+                    rx="1"
+                  />
+                  <rect
+                    x="65"
+                    y="20"
+                    width="10"
+                    height="15"
+                    fill="currentColor"
+                    rx="1"
+                  />
+                  <path
+                    d="M40 70 H60"
+                    stroke="white"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    className="opacity-20"
+                  />
                 </svg>
               </div>
               <p className="text-secondary-foreground/60 text-sm leading-relaxed">
@@ -196,24 +281,48 @@ export default function AboutPage() {
 
             {/* Card 3 - Lowest Offset */}
             <div className="w-full sm:w-[280px] bg-secondary p-8 rounded-sm shadow-2xl transform md:translate-y-12 hover:scale-105 transition-all duration-300">
-              <h3 className="text-xl md:text-2xl font-bold text-secondary-foreground mb-8 uppercase leading-tight">Meaningful <br /> Flow</h3>
+              <h3 className="text-xl md:text-2xl font-bold text-secondary-foreground mb-8 uppercase leading-tight">
+                Meaningful <br /> Flow
+              </h3>
               <div className="h-48 md:h-56 mb-8 flex items-center justify-center">
                 {/* Abstract Artistic SVG - Rainbow/Bridge */}
-                <svg viewBox="0 0 100 100" className="w-20 h-20 text-primary">
-                  <path d="M20 70 C20 30 80 30 80 70" stroke="currentColor" strokeWidth="8" fill="none" strokeLinecap="round" />
-                  <path d="M35 70 C35 45 65 45 65 70" stroke="currentColor" strokeWidth="4" fill="none" strokeLinecap="round" />
+                <svg
+                  viewBox="0 0 100 100"
+                  className="w-20 h-20 text-primary"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M20 70 C20 30 80 30 80 70"
+                    stroke="currentColor"
+                    strokeWidth="8"
+                    fill="none"
+                    strokeLinecap="round"
+                  />
+                  <path
+                    d="M35 70 C35 45 65 45 65 70"
+                    stroke="currentColor"
+                    strokeWidth="4"
+                    fill="none"
+                    strokeLinecap="round"
+                  />
                   <circle cx="20" cy="70" r="6" fill="currentColor" />
                   <circle cx="80" cy="70" r="6" fill="currentColor" />
                 </svg>
               </div>
               <p className="text-secondary-foreground/60 text-sm leading-relaxed">
-                Creating lasting professional mentorships through structured growth.
+                Creating lasting professional mentorships through structured
+                growth.
               </p>
             </div>
           </div>
 
           <div className="mt-20 md:mt-32 text-center">
-            <Button asChild variant="secondary" size="xl" className="rounded-full shadow-xl">
+            <Button
+              asChild
+              variant="secondary"
+              size="xl"
+              className="rounded-full shadow-xl"
+            >
               <Link href="/agenda" className="flex items-center gap-2">
                 Explore the Full Agenda <ArrowRight className="h-5 w-5" />
               </Link>

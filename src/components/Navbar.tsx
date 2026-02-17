@@ -1,10 +1,10 @@
 "use client";
 
+import { motion } from "framer-motion";
+import { Menu, X } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
-import { Menu, X } from "lucide-react";
-import { motion } from "framer-motion";
 import { RegisterButton } from "./RegisterButton";
 
 const navLinks = [
@@ -37,10 +37,9 @@ export function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
-                className={`text-xs font-black uppercase tracking-widest transition-all hover:text-primary ${pathname === link.href
-                  ? "text-primary"
-                  : "text-[#1A1C1E]/60"
-                  }`}
+                className={`text-xs font-black uppercase tracking-widest transition-all hover:text-primary ${
+                  pathname === link.href ? "text-primary" : "text-[#1A1C1E]/60"
+                }`}
               >
                 {link.label}
               </Link>
@@ -49,9 +48,7 @@ export function Navbar() {
 
           {/* CTA Button + Mobile Toggle */}
           <div className="flex items-center gap-4">
-            <RegisterButton
-              className="hidden lg:inline-flex items-center justify-center rounded-full bg-[#1A1C1E] px-6 py-2.5 text-xs font-black uppercase tracking-widest text-primary shadow-lg hover:bg-black transition-all hover:scale-105 active:scale-95"
-            >
+            <RegisterButton className="hidden lg:inline-flex items-center justify-center rounded-full bg-[#1A1C1E] px-6 py-2.5 text-xs font-black uppercase tracking-widest text-primary shadow-lg hover:bg-black transition-all hover:scale-105 active:scale-95">
               Register Now
             </RegisterButton>
 
@@ -84,10 +81,11 @@ export function Navbar() {
                   key={link.href}
                   href={link.href}
                   onClick={() => setMobileMenuOpen(false)}
-                  className={`text-sm font-black uppercase tracking-widest py-2 transition-colors ${pathname === link.href
-                    ? "text-primary"
-                    : "text-foreground/70 hover:text-primary"
-                    }`}
+                  className={`text-sm font-black uppercase tracking-widest py-2 transition-colors ${
+                    pathname === link.href
+                      ? "text-primary"
+                      : "text-foreground/70 hover:text-primary"
+                  }`}
                 >
                   {link.label}
                 </Link>

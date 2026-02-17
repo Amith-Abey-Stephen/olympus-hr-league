@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { Inter, Poppins } from "next/font/google";
 import "./globals.css";
-import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
+import { Navbar } from "@/components/Navbar";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -18,12 +18,15 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_BASE_URL || 'https://olympus.mulearn.org'),
+  metadataBase: new URL(
+    process.env.NEXT_PUBLIC_BASE_URL || "https://olympus.mulearn.org",
+  ),
   title: {
     default: "Olympus – The HR Icon | µLearn",
-    template: "%s | Olympus – The HR Icon"
+    template: "%s | Olympus – The HR Icon",
   },
-  description: "Olympus – The HR Icon is a hybrid HR and leadership challenge bridging academic learning with real-world corporate decision-making. Organized by µLearn HR Interest Group.",
+  description:
+    "Olympus – The HR Icon is a hybrid HR and leadership challenge bridging academic learning with real-world corporate decision-making. Organized by µLearn HR Interest Group.",
   keywords: [
     "HR Icon",
     "Olympus",
@@ -45,7 +48,8 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "Olympus – The HR Icon",
-    description: "Bridge academic learning with real-world corporate decision-making",
+    description:
+      "Bridge academic learning with real-world corporate decision-making",
     url: "/",
     siteName: "Olympus – The HR Icon",
     images: [
@@ -72,9 +76,9 @@ export const metadata: Metadata = {
     googleBot: {
       index: true,
       follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
     },
   },
 };

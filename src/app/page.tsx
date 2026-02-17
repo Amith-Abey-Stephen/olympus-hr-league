@@ -1,42 +1,43 @@
+import { ArrowRight, BookOpen, Target, Trophy, Users } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Users, Trophy, Target, Sparkles, BookOpen } from "lucide-react";
-import LottiePlayer from "@/components/ui/Lottieplayer";
-import { Button } from "@/components/ui/button";
+
 import { WhyOlympusScroll } from "@/components/home/WhyOlympusScroll";
 import { RegisterButton } from "@/components/RegisterButton";
-import Image from "next/image";
+import { Button } from "@/components/ui/button";
+import LottiePlayer from "@/components/ui/Lottieplayer";
 
-const CARESTACK_LOGO = '/assets/carestack-logo.webp';
-const HR_EVOLVE_LOGO = '/assets/hr-evolve-logo.webp';
-const MULEARN_LOGO = '/assets/mulearn-foundation-logo-black.png';
-const GTECH_INDIA_LOGO = '/assets/gtech-logo.svg';
+const CARESTACK_LOGO = "/assets/carestack-logo.webp";
+const HR_EVOLVE_LOGO = "/assets/hr-evolve-logo.webp";
+const MULEARN_LOGO = "/assets/mulearn-foundation-logo-black.png";
+const GTECH_INDIA_LOGO = "/assets/gtech-logo.svg";
 
 // Fixed logos array structure
 const logos = [
   {
     src: CARESTACK_LOGO,
     alt: "CareStack Logo",
-    height: 36,// Adjust based on your logo's optimal display size
-    link: "https://carestack.com/"
+    height: 36, // Adjust based on your logo's optimal display size
+    link: "https://carestack.com/",
   },
   {
     src: HR_EVOLVE_LOGO,
     alt: "HR Evolve Logo",
     height: 40, // Slightly taller for this logo
-    link: "https://hrevolve.org/"
+    link: "https://hrevolve.org/",
   },
   {
     src: GTECH_INDIA_LOGO,
     alt: "Gtech India Logo",
     height: 36,
-    link: "https://www.gtechindia.org/"
+    link: "https://www.gtechindia.org/",
   },
 
   {
     src: MULEARN_LOGO,
     alt: "Mulearn Logo",
     height: 36,
-    link: "https://mulearn.org/"
+    link: "https://mulearn.org/",
   },
 ];
 
@@ -58,7 +59,12 @@ export default function HomePage() {
             {/* Fixed logo display section */}
             <div className="inline-flex items-center gap-4 md:gap-6 px-6 py-3 rounded-full bg-white/90 backdrop-blur-sm border border-primary/20 mb-6 shadow-sm">
               {logos.map((logo, index) => (
-                <Link href={logo.link} target="_blank" key={logo.alt} className="flex items-center">
+                <Link
+                  href={logo.link}
+                  target="_blank"
+                  key={logo.alt}
+                  className="flex items-center"
+                >
                   <Image
                     src={logo.src}
                     alt={logo.alt}
@@ -90,11 +96,15 @@ export default function HomePage() {
             <div className="flex flex-wrap items-center justify-center gap-6 mb-6 md:mb-8 text-foreground/70">
               <div className="flex items-start gap-1 md:gap-2">
                 <Users className="h-5 w-5 text-primary" />
-                <span className="text-sm md:text-base">200 Attendees (120 Students + 80 Professionals)</span>
+                <span className="text-sm md:text-base">
+                  200 Attendees (120 Students + 80 Professionals)
+                </span>
               </div>
             </div>
             <p className="text-base md:text-lg text-foreground/70 max-w-2xl mx-auto mb-6 md:mb-8 px-4 md:px-0">
-              Olympus is a flagship HR experience designed to bridge academic learning and industry practice through real-world sessions, expert-led discussions, and meaningful professional connections.
+              Olympus is a flagship HR experience designed to bridge academic
+              learning and industry practice through real-world sessions,
+              expert-led discussions, and meaningful professional connections.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Button asChild variant="white" size="xl">
@@ -104,9 +114,7 @@ export default function HomePage() {
                 </RegisterButton>
               </Button>
               <Button asChild variant="secondary" size="xl">
-                <Link href="/agenda">
-                  View Full Agenda
-                </Link>
+                <Link href="/agenda">View Full Agenda</Link>
               </Button>
             </div>
           </div>
@@ -134,9 +142,13 @@ export default function HomePage() {
             <div className="md:absolute md:top-0 md:left-1/2 md:-translate-x-1/2 flex flex-col md:flex-row items-end gap-0 z-20 w-full md:w-auto px-4 md:px-0">
               <div className="bg-white p-8 md:p-10 rounded-[32px] shadow-xl border border-border max-w-sm relative group hover:border-primary transition-all duration-300 text-center md:text-left">
                 <div className="w-4 h-4 bg-primary absolute top-6 left-6" />
-                <h3 className="text-2xl font-bold text-foreground mb-4 mt-4">Authority & Insights</h3>
+                <h3 className="text-2xl font-bold text-foreground mb-4 mt-4">
+                  Authority & Insights
+                </h3>
                 <p className="text-sm text-foreground/60 leading-relaxed">
-                  Gain direct access to industry leaders through panels, labs, and interactive sessions that reveal the "organizational soul".
+                  Gain direct access to industry leaders through panels, labs,
+                  and interactive sessions that reveal the "organizational
+                  soul".
                 </p>
               </div>
               <div className="bg-white/80 backdrop-blur-sm p-6 rounded-2xl shadow-lg border border-border -ml-6 -mb-6 hidden md:flex items-center justify-center transition-transform group-hover:scale-110">
@@ -148,9 +160,13 @@ export default function HomePage() {
             <div className="md:absolute md:top-1/2 md:-translate-y-1/2 md:left-0 md:left-[5%] flex flex-col md:flex-row items-end gap-0 z-10 w-full md:w-auto px-4 md:px-0 md:mt-0">
               <div className="bg-white p-8 md:p-10 rounded-[32px] shadow-xl border border-border max-w-sm relative group hover:border-primary transition-all duration-300 text-center md:text-left">
                 <div className="w-4 h-4 bg-primary absolute top-6 left-6" />
-                <h3 className="text-2xl font-bold text-foreground mb-4 mt-4">Flow & Connection</h3>
+                <h3 className="text-2xl font-bold text-foreground mb-4 mt-4">
+                  Flow & Connection
+                </h3>
                 <p className="text-sm text-foreground/60 leading-relaxed mx-auto md:mx-0">
-                  Experience structured networking and hands-on design challenges that bridge the gap between theory and industry practice.
+                  Experience structured networking and hands-on design
+                  challenges that bridge the gap between theory and industry
+                  practice.
                 </p>
               </div>
               <div className="bg-white/80 backdrop-blur-sm p-6 rounded-2xl shadow-lg border border-border -ml-6 -mb-6 hidden md:flex items-center justify-center transition-transform group-hover:scale-110">
@@ -162,9 +178,12 @@ export default function HomePage() {
             <div className="md:absolute md:bottom-0 md:right-0 md:right-[5%] flex flex-col md:flex-row items-end gap-0 z-10 w-full md:w-auto px-4 md:px-0 md:mt-0">
               <div className="bg-white p-8 md:p-10 rounded-[32px] shadow-xl border border-border max-w-sm relative group hover:border-primary transition-all duration-300 text-center md:text-left">
                 <div className="w-4 h-4 bg-primary absolute top-6 left-6" />
-                <h3 className="text-2xl font-bold text-foreground mb-4 mt-4">Strategic Growth</h3>
+                <h3 className="text-2xl font-bold text-foreground mb-4 mt-4">
+                  Strategic Growth
+                </h3>
                 <p className="text-sm text-foreground/60 leading-relaxed mx-auto md:mx-0">
-                  Accelerate your trajectory with peer-to-peer labs and deep-dive audits of modern people management strategies.
+                  Accelerate your trajectory with peer-to-peer labs and
+                  deep-dive audits of modern people management strategies.
                 </p>
               </div>
               <div className="bg-white/80 backdrop-blur-sm p-6 rounded-2xl shadow-lg border border-border -ml-6 -mb-6 hidden md:flex items-center justify-center transition-transform group-hover:scale-110">
@@ -179,10 +198,13 @@ export default function HomePage() {
           </div>
 
           <div className="text-center mt-20 relative z-30">
-            <Button asChild variant="secondary" size="xl" className="rounded-full px-10 shadow-lg">
-              <Link href="/agenda">
-                View Full Agenda
-              </Link>
+            <Button
+              asChild
+              variant="secondary"
+              size="xl"
+              className="rounded-full px-10 shadow-lg"
+            >
+              <Link href="/agenda">View Full Agenda</Link>
             </Button>
           </div>
         </div>
@@ -197,27 +219,37 @@ export default function HomePage() {
               Who Should Participate
             </h2>
             <p className="text-lg text-foreground/60 max-w-2xl mx-auto">
-              Olympus is designed for ambitious individuals ready to bridge the gap between academic learning and professional excellence.
+              Olympus is designed for ambitious individuals ready to bridge the
+              gap between academic learning and professional excellence.
             </p>
           </div>
 
           {/* Scattered Layout - Mobile: Stacked, Desktop: Scattered */}
           <div className="relative md:min-h-[700px] max-w-6xl mx-auto flex flex-col gap-12 md:block">
-
             {/* Engineering Students - Top Left */}
             <div className="md:absolute md:top-0 md:left-[5%] flex flex-col items-center md:items-start gap-4">
               <div className="relative">
                 <div className="absolute inset-0 bg-primary rounded-full scale-90 -z-10 translate-x-4 translate-y-4" />
-                <img
+                <Image
                   src="/engineering-students.webp"
                   alt="Engineering Students"
+                  width={224}
+                  height={224}
                   className="w-40 h-40 md:w-56 md:h-56 object-contain relative z-10"
                 />
               </div>
               <div className="text-center md:text-left">
-                <p className="text-xs uppercase tracking-widest text-foreground/50 mb-1">Students</p>
-                <h3 className="text-lg md:text-xl font-bold text-foreground">Engineering<br />Students</h3>
-                <p className="text-xs text-foreground/40 max-w-[150px] mx-auto md:mx-0">Exploring management pathways and human-side tech leadership.</p>
+                <p className="text-xs uppercase tracking-widest text-foreground/50 mb-1">
+                  Students
+                </p>
+                <h3 className="text-lg md:text-xl font-bold text-foreground">
+                  Engineering
+                  <br />
+                  Students
+                </h3>
+                <p className="text-xs text-foreground/40 max-w-[150px] mx-auto md:mx-0">
+                  Exploring management pathways and human-side tech leadership.
+                </p>
               </div>
             </div>
 
@@ -225,16 +257,26 @@ export default function HomePage() {
             <div className="md:absolute md:bottom-0 md:left-1/2 md:-translate-x-1/2 flex flex-col items-center gap-4">
               <div className="relative">
                 <div className="absolute inset-0 bg-primary rounded-full scale-90 -z-10 translate-x-2 translate-y-2" />
-                <img
+                <Image
                   src="/mba-graduates.webp"
                   alt="BBA/MBA Students"
+                  width={256}
+                  height={256}
                   className="w-44 h-44 md:w-64 md:h-64 object-contain relative z-10"
                 />
               </div>
               <div className="text-center">
-                <p className="text-xs uppercase tracking-widest text-foreground/50 mb-1">Degrees</p>
-                <h3 className="text-lg md:text-xl font-bold text-foreground">BBA / MBA / HR<br />Students</h3>
-                <p className="text-xs text-foreground/40 max-w-[200px] mx-auto">Seeking practical exposure to complement theoretical learning.</p>
+                <p className="text-xs uppercase tracking-widest text-foreground/50 mb-1">
+                  Degrees
+                </p>
+                <h3 className="text-lg md:text-xl font-bold text-foreground">
+                  BBA / MBA / HR
+                  <br />
+                  Students
+                </h3>
+                <p className="text-xs text-foreground/40 max-w-[200px] mx-auto">
+                  Seeking practical exposure to complement theoretical learning.
+                </p>
               </div>
             </div>
 
@@ -242,19 +284,27 @@ export default function HomePage() {
             <div className="md:absolute md:top-8 md:right-[5%] flex flex-col items-center md:items-end gap-4">
               <div className="relative">
                 <div className="absolute inset-0 bg-primary rounded-full scale-90 -z-10 -translate-x-4 translate-y-4" />
-                <img
+                <Image
                   src="/hr.webp"
                   alt="HR Aspirants"
+                  width={224}
+                  height={224}
                   className="w-40 h-40 md:w-56 md:h-56 object-contain relative z-10"
                 />
               </div>
               <div className="text-center md:text-right">
-                <p className="text-xs uppercase tracking-widest text-foreground/50 mb-1">Professionals</p>
-                <h3 className="text-lg md:text-xl font-bold text-foreground">HR Aspirants &<br />Early-Career</h3>
-                <p className="text-xs text-foreground/40 max-w-[150px] mx-auto md:mx-0">Enter the HR profession or advance in early career stages.</p>
+                <p className="text-xs uppercase tracking-widest text-foreground/50 mb-1">
+                  Professionals
+                </p>
+                <h3 className="text-lg md:text-xl font-bold text-foreground">
+                  HR Aspirants &<br />
+                  Early-Career
+                </h3>
+                <p className="text-xs text-foreground/40 max-w-[150px] mx-auto md:mx-0">
+                  Enter the HR profession or advance in early career stages.
+                </p>
               </div>
             </div>
-
           </div>
         </div>
       </section>
@@ -305,17 +355,31 @@ export default function HomePage() {
 
             <p className="text-lg md:text-xl text-foreground/60 max-w-2xl mx-auto mb-10 leading-relaxed">
               Top performers earn the prestigious People Champion title,
-              recognizing exceptional leadership, ethical decision-making,
-              and the ability to inspire others.
+              recognizing exceptional leadership, ethical decision-making, and
+              the ability to inspire others.
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Button asChild variant="default" size="xl" className="rounded-full px-8">
-                <a href="https://mulearn.org/r/olympus_thehrleague" target="_blank" rel="noopener noreferrer">
+              <Button
+                asChild
+                variant="default"
+                size="xl"
+                className="rounded-full px-8"
+              >
+                <a
+                  href="https://mulearn.org/r/olympus_thehrleague"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   Be Part of Founding Cohort
                 </a>
               </Button>
-              <Button asChild variant="outline" size="xl" className="rounded-full px-8">
+              <Button
+                asChild
+                variant="outline"
+                size="xl"
+                className="rounded-full px-8"
+              >
                 <Link href="/agenda">
                   View Agenda
                   <ArrowRight className="ml-2 h-5 w-5" />

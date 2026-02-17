@@ -1,6 +1,6 @@
 "use client";
-import { X, Calendar } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
+import { Calendar, X } from "lucide-react";
 import { useEffect } from "react";
 import { createPortal } from "react-dom";
 
@@ -40,7 +40,7 @@ export function RegistrationClosedPopup({
             onClick={onClose}
             className="fixed inset-0 bg-black/60 backdrop-blur-sm z-[9998]"
           />
-          
+
           {/* Modal Container - Ensures perfect centering */}
           <div className="fixed inset-0 z-[9999] flex items-center justify-center p-4 pointer-events-none">
             <motion.div
@@ -55,6 +55,7 @@ export function RegistrationClosedPopup({
                 {/* Header */}
                 <div className="bg-gradient-to-r from-primary to-primary/80 px-6 py-8 text-center relative">
                   <button
+                    type="button"
                     onClick={onClose}
                     className="absolute top-4 right-4 p-2 hover:bg-white/20 rounded-full transition-colors"
                     aria-label="Close"
@@ -72,7 +73,7 @@ export function RegistrationClosedPopup({
                   <p className="text-foreground/70 text-center mb-6">
                     Registration for Olympus: The HR Icon opens on
                   </p>
-                  
+
                   <div className="bg-secondary/10 border-2 border-primary rounded-lg py-6 px-4 text-center mb-6">
                     <p className="text-sm font-medium text-foreground/60 mb-2">
                       Opens On
@@ -81,7 +82,7 @@ export function RegistrationClosedPopup({
                       18 Feb 2026
                     </p>
                   </div>
-                  
+
                   <p className="text-foreground/60 text-center text-sm mb-6">
                     Come back on February 18th to secure your spot for this
                     flagship HR experience.
@@ -89,6 +90,7 @@ export function RegistrationClosedPopup({
 
                   {/* Closing Button */}
                   <button
+                    type="button"
                     onClick={onClose}
                     className="w-full bg-foreground/10 hover:bg-foreground/20 text-foreground font-semibold py-3 rounded-lg transition-colors"
                   >

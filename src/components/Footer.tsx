@@ -1,14 +1,5 @@
+import { Phone } from "lucide-react";
 import Link from "next/link";
-import { Phone, Linkedin, Instagram, Twitter } from "lucide-react";
-
-const quickLinks = [
-  { href: "/", label: "Home" },
-  { href: "/about", label: "About" },
-  { href: "/agenda", label: "Agenda" },
-  { href: "/participants", label: "Participants" },
-  { href: "/sponsors", label: "Sponsors" },
-  { href: "/contact", label: "Contact / Register" },
-];
 
 const contacts = [
   { name: "Prapanch J", phone: "+91 94464 47965" },
@@ -22,7 +13,6 @@ export function Footer() {
       {/* Main Content */}
       <div className="container mx-auto px-4 pt-16 pb-8 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-
           {/* Careers/About */}
           <div>
             <span className="inline-block px-3 py-1 rounded-full bg-background text-foreground text-xs font-medium mb-4">
@@ -34,7 +24,6 @@ export function Footer() {
             <p className="text-background/70 text-sm mb-4">
               by µLearn Foundation
             </p>
-
           </div>
 
           {/* Office/Location */}
@@ -63,14 +52,14 @@ export function Footer() {
             </span>
             <div className="space-y-2 mb-4">
               {contacts.map((contact) => {
-                const phoneWithoutSpaces = contact.phone.replace(/\s+/g, '');
-                const whatsappUrl = `https://wa.me/${phoneWithoutSpaces}?text=Hi%20${contact.name.replace(/\s+/g, '%20')}%2C%20I%27m%20interested%20in%20Olympus`;
+                const phoneWithoutSpaces = contact.phone.replace(/\s+/g, "");
+                const whatsappUrl = `https://wa.me/${phoneWithoutSpaces}?text=Hi%20${contact.name.replace(/\s+/g, "%20")}%2C%20I%27m%20interested%20in%20Olympus`;
                 return (
                   <div key={contact.name} className="flex items-center gap-2">
                     <Phone className="h-4 w-4" />
-                    <a 
-                      href={whatsappUrl} 
-                      target="_blank" 
+                    <a
+                      href={whatsappUrl}
+                      target="_blank"
                       rel="noopener noreferrer"
                       className="text-sm hover:text-primary transition-colors underline underline-offset-2 text-decoration-none"
                     >
@@ -103,25 +92,36 @@ export function Footer() {
       {/* Large OLYMPUS Cursive Text */}
       <div className="relative w-full pb-6">
         {/* Using inline style for cursive font - Pacifico from Google Fonts */}
-        <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+          rel="stylesheet"
+        />
         <h2
           className="text-[18vw] md:text-[15vw] lg:text-[12vw] text-primary leading-none text-center select-none whitespace-nowrap"
           style={{
             fontFamily: "'Pacifico', cursive",
-            letterSpacing: '0.02em'
+            letterSpacing: "0.02em",
           }}
         >
           olympus
         </h2>
-
-
       </div>
 
       {/* Bottom copyright */}
       <div className="border-t border-background/10 py-4">
         <div className="container mx-auto px-4 flex flex-col sm:flex-row justify-between items-center gap-2 text-xs text-background/50">
           <p>© {new Date().getFullYear()} Olympus: The HR Icon</p>
-          <p>Organized by <a href="https://mulearn.org" target="_blank" rel="noopener noreferrer" className="text-primary font-semibold">µLearn HR Interest Group</a></p>
+          <p>
+            Organized by{" "}
+            <a
+              href="https://mulearn.org"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-primary font-semibold"
+            >
+              µLearn HR Interest Group
+            </a>
+          </p>
         </div>
       </div>
     </footer>
