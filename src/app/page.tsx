@@ -97,7 +97,7 @@ export default function HomePage() {
               <div className="flex items-start gap-1 md:gap-2">
                 <Users className="h-5 w-5 text-primary" />
                 <span className="text-sm md:text-base">
-                  200 Attendees (120 Students + 80 Professionals)
+                  200+ Attendees
                 </span>
               </div>
             </div>
