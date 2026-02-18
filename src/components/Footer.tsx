@@ -1,4 +1,5 @@
 import { Phone } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 
 const contacts = [
@@ -12,7 +13,7 @@ export function Footer() {
     <footer className="bg-foreground text-background relative overflow-hidden">
       {/* Main Content */}
       <div className="container mx-auto px-4 pt-16 pb-8 relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
           {/* Careers/About */}
           <div>
             <span className="inline-block px-3 py-1 rounded-full bg-background text-foreground text-xs font-medium mb-4">
@@ -85,6 +86,29 @@ export function Footer() {
                 <Twitter className="h-4 w-4" />
               </Link>
             </div> */}
+          </div>
+
+          {/* Ticketing Partner */}
+          <div>
+            <span className="inline-block px-3 py-1 rounded-full bg-background text-foreground text-xs font-medium mb-4">
+              Ticketing Partner
+            </span>
+            <div className="mt-2">
+              <Link
+                href="https://makemypass.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block  p-4 rounded-2xl shadow-sm hover:shadow-md transition-shadow"
+              >
+                <Image
+                  src="/assets/make-my-pass-logo.svg"
+                  alt="Make My Pass"
+                  width={150}
+                  height={50}
+                  className="h-8 md:h-10 w-auto object-contain"
+                />
+              </Link>
+            </div>
           </div>
         </div>
       </div>
