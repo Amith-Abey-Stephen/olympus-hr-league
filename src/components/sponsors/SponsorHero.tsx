@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { ArrowRight, Heart, Star } from "lucide-react";
 import Image from "next/image";
+import { siteConfig } from "@/config/site";
 import { Button } from "@/components/ui/button";
 
 export function SponsorHero() {
@@ -96,7 +97,7 @@ export function SponsorHero() {
               className="rounded-2xl px-12 h-16 text-lg font-bold group"
             >
               <a
-                href="https://forms.gle/rAWMLJReMmoKVm4K8"
+                href={siteConfig.links.partnerRegistration}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-3"

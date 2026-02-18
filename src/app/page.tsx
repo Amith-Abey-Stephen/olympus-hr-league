@@ -2,6 +2,9 @@ import { ArrowRight, BookOpen, Target, Trophy, Users } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
+import { siteConfig } from "@/config/site";
+
+
 import { WhyOlympusScroll } from "@/components/home/WhyOlympusScroll";
 import { RegisterButton } from "@/components/RegisterButton";
 import { Button } from "@/components/ui/button";
@@ -367,7 +370,7 @@ export default function HomePage() {
                 className="rounded-full px-8"
               >
                 <a
-                  href="https://mulearn.org/r/olympus_thehrleague"
+                  href={siteConfig.links.registration}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
