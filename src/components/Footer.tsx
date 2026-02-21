@@ -29,21 +29,23 @@ export function Footer() {
 
           {/* Office/Location */}
           <div>
-            <span className="inline-block px-3 py-1 rounded-full bg-background text-foreground text-xs font-medium mb-4">
-              Event Format
+            <span className="inline-block px-3 py-1 rounded-full bg-background/10 text-background text-xs font-medium mb-4">
+              Event Venue
             </span>
             <h3 className="text-xl md:text-2xl font-bold font-heading mb-2">
-              Single-Day Immersive
+              CareStack, Technopark Phase III
             </h3>
             <p className="text-background/70 text-sm">
-              Offline-First Experience
+              Trivandrum, Kerala 695583
             </p>
-            <Link
-              href="/agenda"
-              className="inline-block mt-4 text-sm text-background underline underline-offset-4 hover:text-background/80 transition-colors"
+            <a
+              href="https://maps.app.goo.gl/HqPKGeTLxdkJfHBq7"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block mt-4 text-sm font-medium text-primary hover:text-primary/80 transition-colors underline underline-offset-4"
             >
-              View Full Agenda
-            </Link>
+              Get Location Directions
+            </a>
           </div>
 
           {/* Contact */}

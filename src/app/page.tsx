@@ -1,9 +1,16 @@
-import { ArrowRight, BookOpen, Target, Trophy, Users } from "lucide-react";
+import {
+  ArrowRight,
+  BookOpen,
+  MapPin,
+  Navigation,
+  Target,
+  Trophy,
+  Users,
+} from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
 import { siteConfig } from "@/config/site";
-
 
 import { WhyOlympusScroll } from "@/components/home/WhyOlympusScroll";
 import { RegisterButton } from "@/components/RegisterButton";
@@ -99,9 +106,7 @@ export default function HomePage() {
             <div className="flex flex-wrap items-center justify-center gap-6 mb-6 md:mb-8 text-foreground/70">
               <div className="flex items-start gap-1 md:gap-2">
                 <Users className="h-5 w-5 text-primary" />
-                <span className="text-sm md:text-base">
-                  200+ Attendees
-                </span>
+                <span className="text-sm md:text-base">200+ Attendees</span>
               </div>
             </div>
             <p className="text-base md:text-lg text-foreground/70 max-w-2xl mx-auto mb-6 md:mb-8 px-4 md:px-0">
@@ -120,6 +125,44 @@ export default function HomePage() {
                 <Link href="/agenda">View Full Agenda</Link>
               </Button>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Venue Banner Below Hero */}
+      <section className="bg-primary/10 border-y border-primary/20 py-4 md:py-6 relative z-20">
+        <div className="container mx-auto px-4">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 md:gap-8 text-center sm:text-left transition-all">
+            <div className="flex items-center gap-3">
+              <div className="bg-background/50 border border-primary/20 p-2.5 rounded-full hidden sm:flex items-center justify-center">
+                <MapPin className="h-6 w-6 text-primary" />
+              </div>
+              <div>
+                <p className="text-xs md:text-sm text-foreground/60 font-semibold uppercase tracking-widest mb-1">
+                  Event Venue
+                </p>
+                <p className="text-base md:text-xl font-bold font-heading text-foreground">
+                  CareStack, Technopark Phase III, Trivandrum
+                </p>
+              </div>
+            </div>
+            <div className="hidden sm:block w-px h-12 bg-primary/20" />
+            <Button
+              asChild
+              size="lg"
+              variant="default"
+              className="rounded-full shadow-lg group"
+            >
+              <a
+                href="https://maps.app.goo.gl/HqPKGeTLxdkJfHBq7"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center text-sm md:text-base font-bold"
+              >
+                <Navigation className="h-4 w-4 md:h-5 md:w-5 mr-2 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-transform" />
+                Get Directions
+              </a>
+            </Button>
           </div>
         </div>
       </section>
