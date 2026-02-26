@@ -33,12 +33,7 @@ export default function ContactPage() {
                       Prapanch J
                     </h3>
                     <div className="flex flex-col gap-1">
-                      <a
-                        href="mailto:prjmannar@gmail.com"
-                        className="text-lg font-medium text-foreground/60 hover:text-primary transition-colors"
-                      >
-                        prjmannar@gmail.com
-                      </a>
+                      
                       <div className="flex items-center gap-3">
                         <a
                           href="https://wa.me/919446447965?text=Hi%20Prapanch%2C%20I%27m%20interested%20in%20Olympus"
@@ -105,12 +100,7 @@ export default function ContactPage() {
                       Diya Benny
                     </h3>
                     <div className="flex flex-col gap-1">
-                      <a
-                        href="mailto:diyabenny2k3@gmail.com"
-                        className="text-lg font-medium text-foreground/60 hover:text-primary transition-colors"
-                      >
-                        diyabenny2k3@gmail.com
-                      </a>
+                     
                       <div className="flex items-center gap-3">
                         <a
                           href="https://wa.me/918301073978?text=Hi%20Diya%2C%20I%27m%20interested%20in%20Olympus"
@@ -177,12 +167,7 @@ export default function ContactPage() {
                       Nandana Vipin
                     </h3>
                     <div className="flex flex-col gap-1">
-                      <a
-                        href="mailto:nandanavipin2022@gmail.com"
-                        className="text-lg font-medium text-foreground/60 hover:text-primary transition-colors"
-                      >
-                        nandanavipin2022@gmail.com
-                      </a>
+                      
                       <div className="flex items-center gap-3">
                         <a
                           href="https://wa.me/917559910963?text=Hi%20Nandana%2C%20I%27m%20interested%20in%20Olympus"

@@ -26,7 +26,7 @@ const phases: Phase[] = [
   {
     id: "02",
     time: "10:00 AM – 11:05 AM",
-    title: "Session 1: How Do You Get Hired",
+    title: "Session 1: How To Hire",
     description:
       "Hiring/promotion criteria, live resume analysis, and mock interviews with professionals.",
   },
@@ -40,9 +40,9 @@ const phases: Phase[] = [
   {
     id: "04",
     time: "11:20 AM – 12:30 PM",
-    title: "Session 2: Lifecycle Challenge",
+    title: "Session 2: Employee Life Cycle",
     description:
-      "Workshop focusing on employee motivation, internal growth, and retention strategies.",
+      "",
   },
   {
     id: "05",

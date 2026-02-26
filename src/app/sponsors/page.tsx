@@ -24,7 +24,7 @@ export default function SponsorsPage() {
             READY TO SCALE YOUR <br />
             <span className="text-primary italic">BRAND IMPACT?</span>
           </h2>
-          <div className="flex justify-center">
+          <div className="flex flex-col items-center">
             <Button
               asChild
               size="xl"
@@ -40,6 +40,16 @@ export default function SponsorsPage() {
                 <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
               </a>
             </Button>
+            {/* contact email for partners */}
+            <p className="mt-4 text-sm">
+              Questions? Email us at{' '}
+              <a
+                href="mailto:partners@mulearn.org"
+                className="text-primary underline"
+              >
+                partners@mulearn.org
+              </a>
+            </p>
           </div>
         </div>
         {/* Decorative background element */}
