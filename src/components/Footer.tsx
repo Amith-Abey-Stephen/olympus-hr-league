@@ -39,7 +39,7 @@ export function Footer() {
               Trivandrum, Kerala 695583
             </p>
             <a
-              href="https://maps.app.goo.gl/HqPKGeTLxdkJfHBq7"
+              href="https://maps.app.goo.gl/KQmCNqoM62XBN6Mn7"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block mt-4 text-sm font-medium text-primary hover:text-primary/80 transition-colors underline underline-offset-4"

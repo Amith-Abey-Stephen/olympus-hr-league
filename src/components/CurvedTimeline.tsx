@@ -18,7 +18,7 @@ interface Phase {
 const phases: Phase[] = [
   {
     id: "01",
-    time: "09:00 AM – 10:00 AM",
+    time: "09:00 AM – 09:30 AM",
     title: "Registration & Icebreaker",
     description:
       "Registration followed by an interactive Icebreaker session to build functional units.",
@@ -26,7 +26,7 @@ const phases: Phase[] = [
   {
     id: "02",
     time: "10:00 AM – 11:05 AM",
-    title: "Session 1: How Do You Get Hired",
+    title: "Session 1: How To Hire",
     description:
       "Hiring/promotion criteria, live resume analysis, and mock interviews with professionals.",
   },
@@ -40,9 +40,9 @@ const phases: Phase[] = [
   {
     id: "04",
     time: "11:20 AM – 12:30 PM",
-    title: "Session 2: Lifecycle Challenge",
+    title: "Session 2: Employee Life Cycle",
     description:
-      "Workshop focusing on employee motivation, internal growth, and retention strategies.",
+      "",
   },
   {
     id: "05",
@@ -56,7 +56,7 @@ const phases: Phase[] = [
     time: "01:30 PM – 02:30 PM",
     title: "Session 3: Tech & AI Lab",
     description:
-      "Demos of HR software (ATS/HRMS) and a 'Human vs. AI' workforce planning debate.",
+      "",
   },
   {
     id: "07",
@@ -77,7 +77,7 @@ const phases: Phase[] = [
     time: "04:00 PM – 04:30 PM",
     title: "Closing Ceremony",
     description:
-      "Awards for the best 'Lifecycle Design,' group photos, and LinkedIn networking loop.",
+      "Acknowledgements, group photos, and networking through LinkedIn and other social media platforms.",
   },
 ];
 
