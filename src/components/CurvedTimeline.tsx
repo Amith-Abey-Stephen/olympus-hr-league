@@ -18,7 +18,7 @@ interface Phase {
 const phases: Phase[] = [
   {
     id: "01",
-    time: "09:00 AM – 10:00 AM",
+    time: "09:00 AM – 09:30 AM",
     title: "Registration & Icebreaker",
     description:
       "Registration followed by an interactive Icebreaker session to build functional units.",
@@ -56,7 +56,7 @@ const phases: Phase[] = [
     time: "01:30 PM – 02:30 PM",
     title: "Session 3: Tech & AI Lab",
     description:
-      "Demos of HR software (ATS/HRMS) and a 'Human vs. AI' workforce planning debate.",
+      "",
   },
   {
     id: "07",
@@ -77,7 +77,7 @@ const phases: Phase[] = [
     time: "04:00 PM – 04:30 PM",
     title: "Closing Ceremony",
     description:
-      "Awards for the best 'Lifecycle Design,' group photos, and LinkedIn networking loop.",
+      "Acknowledgements, group photos, and networking through LinkedIn and other social media platforms.",
   },
 ];
 
